@@ -1,14 +1,14 @@
-#include "CAvaliacao.h"
+#include "CAvaliacaoTurma.h"
 
 // Constructors/Destructors
 //  
 
-CAvaliacao::CAvaliacao()
+CAvaliacaoTurma::CAvaliacaoTurma()
 {
   initAttributes();
 }
 
-CAvaliacao::~CAvaliacao()
+CAvaliacaoTurma::~CAvaliacaoTurma()
 {
 }
 
@@ -24,7 +24,7 @@ CAvaliacao::~CAvaliacao()
 // Other methods
 //  
 
-void CAvaliacao::initAttributes()
+void CAvaliacaoTurma::initAttributes()
 {
 }
 
