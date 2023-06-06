@@ -1,7 +1,7 @@
 #include "CAvaliacaoTurma.h"
 
 // Constructors/Destructors
-//  
+
 
 CAvaliacaoTurma::CAvaliacaoTurma()
 {
@@ -12,17 +12,15 @@ CAvaliacaoTurma::~CAvaliacaoTurma()
 {
 }
 
-//  
 // Methods
-//  
 
 
 // Accessor methods
-//  
+
 
 
 // Other methods
-//  
+
 
 void CAvaliacaoTurma::initAttributes()
 {

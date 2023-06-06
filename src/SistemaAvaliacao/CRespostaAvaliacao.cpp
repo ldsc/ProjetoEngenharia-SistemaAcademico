@@ -1,7 +1,7 @@
 #include "CRespostaAvaliacao.h"
 
 // Constructors/Destructors
-//  
+
 
 CRespostaAvaliacao::CRespostaAvaliacao()
 {
@@ -12,17 +12,15 @@ CRespostaAvaliacao::~CRespostaAvaliacao()
 {
 }
 
-//  
 // Methods
-//  
 
 
 // Accessor methods
-//  
+
 
 
 // Other methods
-//  
+
 
 void CRespostaAvaliacao::initAttributes()
 {
