@@ -1,168 +1,144 @@
-#ifndef CEMENTADISCIPLINA_H
-#define CEMENTADISCIPLINA_H
+#ifndef CEmentaDisciplina_H
+#define CEmentaDisciplina_H
 
+#include <iostream>
 #include <string>
 #include <vector>
+#include <map>
+#include <algorithm>
+#include "CEstadoPersistente.h"
+#include "CCodigoDisciplina.h"
+#include "ETipoAvaliacao.h"
+#include "CAssunto.h"
 
-class CEmentaDisciplina
+/// A ementa da disciplina contém um conjunto extenso de informações
+/// que são armazenadas em arquivos localizados em dados/EmentaDisciplina/
+/// O nome dos arquivos armazenados é da forma CCodigoDisciplina-Ano-Semestre.
+class CEmentaDisciplina: public CEstadoPersistente
 {
-public:
-  /// Empty Constructor
-  CEmentaDisciplina();
-
-  /// Empty Destructor
-  virtual ~CEmentaDisciplina();
-
-  /// 
-  void ListaAssuntos()
-  {
-  }
-
 private:
-  // Private attributes  
-  CCodigoDisciplina codigo;
+  CCodigoDisciplina codigoDisciplina;
   std::string nome;
   std::vector<CCodigoDisciplina> preRequisito;
-  std::vector<std::string> referencia;//CReferenciaBibliografica referencia;
+  std::vector<std::string> referenciaBibliografica; // CReferenciaBibliografica referencia;
   std::vector<ETipoAvaliacao> sistemaAvaliacao;
-  string conteudoProgramatico;
-  std::vector<CAssunto> ementa;
-  int versao;
+  std::string conteudoProgramatico;
+  std::vector<CAssunto> assunto;
+  std::pair<int,int> versao; // Versão da ementa <Ano,Semestre>
 
-  // Public attribute accessor methods  
+public:
+  // Gestão da lista de disciplinas localizadas em dados/EmentaDisciplina/
+  /// Caminho para diretório onde os dados serão armazenados.
+  static std::string caminhoDiretorio;
+  /// Map com código da disciplina e shared_ptr para ementas.
+  static std::map<CCodigoDisciplina,shared_ptr<CEmentaDisciplina> > map_codigoDisciplina_spEmentaDisciplina;
 
+public:
+  /// Construtor.
+  CEmentaDisciplina();
 
+  /// Destrutor.
+  virtual ~CEmentaDisciplina();
 
-  /// 
-  /// Set the value of codigo
-  /// @param value the new value of codigo
-  void setCodigo(CCodigoDisciplina value)
-  {
-    codigo = value;
-  }
+  /// Define ou redefine toda a ementa.
+  void DefinirEmenta();
 
-  /// 
-  /// Get the value of codigo
-  /// @return the value of codigo
-  CCodigoDisciplina codigo()
-  {
-    return codigo;
-  }
+  /// Define o código da disciplina.
+  void DefinirCodigoDisciplina();
 
-  /// 
-  /// Set the value of nome
-  /// @param value the new value of nome
-  void setNome(string value)
-  {
-    nome = value;
-  }
+  /// Retorna o código da disciplina
+  std::string CodigoDisciplina()   { return codigoDisciplina; }
 
-  /// 
-  /// Get the value of nome
-  /// @return the value of nome
-  string nome()
-  {
-    return nome;
-  }
+  /// Define o nome da disciplina.
+  void DefinirNomeDisciplina();
 
-  /// 
-  /// Set the value of preRequisito
-  /// @param value the new value of preRequisito
-  void setPreRequisito(std::vector<CCodigoDisciplina> value)
-  {
-    preRequisito = value;
-  }
+  /// Seta o nome da disciplina.
+  void Nome(string value)   { nome = value; }
 
-  /// 
-  /// Get the value of preRequisito
-  /// @return the value of preRequisito
-  std::vector<CCodigoDisciplina> preRequisito()
-  {
-    return preRequisito;
-  }
+  /// Retorna o nome da disciplina.
+  std::string Nome()        { return nome; }
 
-  /// 
-  /// Set the value of referencia
-  /// @param value the new value of referencia
-  void setReferencia(CReferenciaBibliografica value)
-  {
-    referencia = value;
-  }
+  /// Seta vetor com  os pré-requisitos.
+  void PreRequisito(std::vector<std::string>& value)
+                            { preRequisito = value; }
 
-  /// 
-  /// Get the value of referencia
-  /// @return the value of referencia
-  CReferenciaBibliografica referencia()
-  {
-    return referencia;
-  }
+  /// Retorna vetor com os pré-requisitos.
+  std::vector<std::string> PreRequisito()
+                            { return preRequisito; }
 
-  /// 
-  /// Set the value of sistemaAvaliacao
-  /// @param value the new value of sistemaAvaliacao
-  void setSistemaAvaliacao(std::vector<ETipoAvaliacao> value)
-  {
-    sistemaAvaliacao = value;
-  }
+  /// Definir os pré-requisitos.
+  void DefinirPreRequisito();
 
-  /// 
-  /// Get the value of sistemaAvaliacao
-  /// @return the value of sistemaAvaliacao
-  std::vector<ETipoAvaliacao> sistemaAvaliacao()
-  {
-    return sistemaAvaliacao;
-  }
+  // Depois trocar por CReferenciaBibliografica
+  /// Seta vetor com as referencias bibliográficas.
+  void ReferenciaBibliografica(std::vector<std::string>& value)
+                            { referenciaBibliografica = value; }
 
-  /// 
+  // CReferenciaBibliografica
+  /// Retorna vetor com as referencias bibliográficas.
+  std::vector<std::string> ReferenciaBibliografica()
+                            { return referenciaBibliografica; }
+
+  /// Definir a referencia bibliográfica.
+  void DefinirReferenciaBibliografica();
+
+  /// Seta vetor com sistema de avaliação.
+  void SistemaAvaliacao(std::vector<ETipoAvaliacao>& value)
+                            { sistemaAvaliacao = value; }
+  /// Retorna vetor com sistemaAvaliacao.
+  std::vector<ETipoAvaliacao> SistemaAvaliacao()
+                            { return sistemaAvaliacao; }
+
+  /// Define o sistema de avaliação.
+  void DefinirSistemaAvaliacao();
+
   /// Set the value of conteudoProgramatico
   /// @param value the new value of conteudoProgramatico
-  void setConteudoProgramatico(string value)
-  {
-    conteudoProgramatico = value;
-  }
+  void ConteudoProgramatico(std::string value)
+                            { conteudoProgramatico = value; }
 
-  /// 
   /// Get the value of conteudoProgramatico
   /// @return the value of conteudoProgramatico
-  string conteudoProgramatico()
-  {
-    return conteudoProgramatico;
-  }
+  std::string conteudoProgramatico()
+                            { return conteudoProgramatico; }
 
-  /// 
-  /// Set the value of ementa
-  /// @param value the new value of ementa
-  void setEmenta(std::vector<CAssunto> value)
-  {
-    ementa = value;
-  }
+   void DefinirConteudoProgramatico();
 
-  /// 
-  /// Get the value of ementa
-  /// @return the value of ementa
-  std::vector<CAssunto> ementa()
-  {
-    return ementa;
-  }
+  /// A ementa é uma lista de assuntos.
+  void Assunto(std::vector<CAssunto> value)
+                            { assunto = value; }
 
-  /// 
+  /// Returna a lista de assuntos num vetor
+  std::vector<CAssunto> Assunto()
+                            { return assunto; }
+
+  /// Definir a lista de assuntos.
+  void DefinirAssunto();
+
   /// Set the value of versao
   /// @param value the new value of versao
-  void setVersao(int value)
-  {
-    versao = value;
-  }
+  void Versao(std::pair<int,int> ano_semestre)
+                            { versao = ano_semestre; }
 
-  /// 
   /// Get the value of versao
   /// @return the value of versao
-  int versao()
-  {
-    return versao;
-  }
+  std::pair<int,int> Versao()
+                            { return versao; }
 
-  void initAttributes();
+  /// Definir a versão da ementa (ano e semestre).
+  void DefinirVersao();
 
+  /// Salva um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
+  // O identificadorEstado é dado por Ano-Semestre
+  virtual void SalvarEstado(std::string identificadorEstado = {});
+  /// Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
+  // O identificadorEstado é dado por Ano-Semestre
+  virtual void RecuperarEstado(std::string identificadorEstado = {});
+
+  /// Visualizar, mostra ementa na tela.
+  void Visualizar() { std::cout << *this; };
+
+  /// Sobrecarga operador redirecionamento para cout ou fout.
+  std::ostream& operator<<(std::ostream& os, CEmentaDisciplina& ementa);
 };
-
-#endif // CEMENTADISCIPLINA_H
+#endif // CEmentaDisciplina_H

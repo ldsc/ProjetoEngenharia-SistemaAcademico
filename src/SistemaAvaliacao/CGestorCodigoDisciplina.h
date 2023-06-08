@@ -1,0 +1,91 @@
+#ifndef CGestorCodigoDisciplina_H
+#define CGestorCodigoDisciplina_H
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include "CEstadoPersistente.h"
+#include "CCodigoDisciplina.h"
+
+/// Gerencia os códigos das disciplinas.
+// Cada laboratório tem uma sigla de 3 letras, como exemplo: LEP.
+// Cada disciplina do laboratório tem um número, como exemplo: 0123.
+/// O código das disciplinas segue um padrão: ccc-nnnn ex: LEP-0123.
+// Para gerar um novo código temos de verificar qual o último código utilizado.
+// Soluções:
+// 1: Arquivo único com o próximo código disponível.
+// ex: dados/TabelaCodigoDisciplina/mapSiglaCodigo-.dat com o conteudo.
+// LEP 130
+// FIS 75
+// -> LEP-0130 se criar uma nova disciplina o código será LEP-0131.
+// -> FIS-0075 neste caso, 0075 é o último código utilizado...
+// Podemos usar um std::map<std::string,int> map_ultimoCodigoUsado;
+
+// 2: O diretório dados/TabelaCodigoDisciplina/ tem arquivos, MTM.dat, FIS.dat, LEP.dat com a lista de códigos das disciplinas por laboratório (ordenado).
+// Neste caso o arquivo tem a lista de todos os códigos utilizados e o nome da disciplina.
+class CGestorCodigoDisciplina: public CEstadoPersistente
+{
+public:
+  /// Caminho para diretório onde os dados serão armazenados.
+  static std::string caminhoDiretorio;
+  /// Nome do arquivo onde os dados serão armazenados.
+  static std::string nomeArquivo;
+  /// Map com as siglas dos laboratórios e código disponibilizado. O código vai crescendo de 0001 até 9999.
+  static std::map<std::string,int> map_ultimoCodigoUsado;
+
+public:
+  /// Construtor, recupera o último estado armazenado em disco, recuperando a tabela com sigla dos departamentos e último código utilizado.
+  CGestorCodigoDisciplina() {
+    if(map_ultimoCodigoUsado.size() == 0)
+      RecuperarEstado();
+  }
+  /// Construtor, recupera um estado especifico (ex: um backup).
+  CGestorCodigoDisciplina(std::string identificadorEstado) {
+      RecuperarEstado(identificadorEstado);
+  }
+
+  /// Destrutor, salva em arquivo os dados dos códigos utilizados/criados.
+  virtual ~CGestorCodigoDisciplina() {
+     SalvarEstado();
+  }
+
+  /// Define o código da disciplina pede a sigla do departamento.
+  CCodigoDisciplina DefinirCodigoDisciplina();
+
+  /// Define o código da disciplina com base na sigla do departamento.
+  /// Também poderia alterar e já modificar o arquivo (+seguro).
+  CCodigoDisciplina DefinirCodigoDisciplina(std::string siglaDepartamento);
+  
+  /// @return bool
+  //...no caso da universidade ter um padrão de código a verificar...
+  //bool VerificarCodigo(std::string codigoASerVerificado) ;
+
+  /// Adiciona um novo departamento.
+  // Se informar nome de departamento existente desconsidera e emite alerta.
+  void AdicionarDepartamento(std::string siglaDepartamento, int codigoInicial = 0);
+
+  /// Recebe sigla departamento e gera código disciplina.
+  CCodigoDisciplina  operator()(std::string siglaDepartamento)
+                                      { return DefinirCodigoDisciplina(siglaDepartamento); }
+
+  /// Visualizar tabela codigos.
+  void VisualizarTabelaDepartamentoUltimoCodigo();
+  virtual void Visualizar()           { VisualizarTabelaDepartamentoUltimoCodigo(); };
+
+  // Implementa Métodos da classe persistente
+public:
+  /// Seta caminho para o diretório com os arquivos siglaDepartamento - código usado.
+  virtual void CaminhoDiretorio(std::string _caminhoDiretorio)  { caminhoDiretorio = _caminhoDiretorio; };
+  /// Retorna caminho para o diretório com os arquivos siglaDepartamento - código usado.
+  virtual std::string  CaminhoDiretorio()                       { return caminhoDiretorio; };
+  /// Seta nome arquivo com a base de dados.
+  virtual void NomeArquivo(std::string _nomeArquivo)            { nomeArquivo = _nomeArquivo; };
+  /// Retorna nome arquivo com a base de dados.
+  virtual std::string  NomeArquivo()                            { return nomeArquivo; };
+  /// Salva um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
+  virtual void SalvarEstado(std::string identificadorEstado = {});
+  /// Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
+  virtual void RecuperarEstado(std::string identificadorEstado = {});
+};
+#endif // CGestorCodigoDisciplina_H

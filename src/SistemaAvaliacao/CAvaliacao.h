@@ -5,11 +5,9 @@
 // #include "CAvaliacaoProvaEscritaDiscursiva.h"
 // #include "CAvaliacaoListaExercicios.h"
 // #include "CAvaliacaoTurma.h"
-
 #include <string>
 #include <vector>
 
-/// 
 /// class CAvaliacao
 /// Classe que representa uma avaliação criada, por exemplo, por um professor.
 /// Pense nisso como sendo uma prova ou lista de exercícios criada pelo professor.
@@ -24,7 +22,6 @@
 class CAvaliacao
 {
 private:
-  // Private attributes  
   std::vector<CProfessor> professor;
   string dataInicio;
   string dataEntrega;
