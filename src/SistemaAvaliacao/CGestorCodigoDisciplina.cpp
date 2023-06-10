@@ -9,7 +9,7 @@ using namespace std;
  std::string CGestorCodigoDisciplina::caminhoDiretorio = "dados/TabelaCodigoDisciplina/";
  std::string CGestorCodigoDisciplina::nomeArquivo      = "mapSiglaCodigo-"; // padrão, sem o estado
 
- std::map<std::string,int> CGestorCodigoDisciplina::map_ultimoCodigoUsado;
+ std::map<const std::string,int> CGestorCodigoDisciplina::map_ultimoCodigoUsado;
 
 // Implementação dos métodos da classe CGestorCodigoDisciplina
 // Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
@@ -34,7 +34,7 @@ void CGestorCodigoDisciplina::RecuperarEstado(std::string identificadorEstado)
 }
 
 // Salva um estado específico. caminhoDiretorio + nomeArquivo + "-" + identificadorEstado
-void CGestorCodigoDisciplina::SalvarEstado(std::string identificadorEstado)
+void CGestorCodigoDisciplina::SalvarEstado(const std::string identificadorEstado) const
 {
     std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
     std::ofstream arquivoSiglaCodigo (nomeCompleto);
@@ -48,14 +48,14 @@ void CGestorCodigoDisciplina::SalvarEstado(std::string identificadorEstado)
     arquivoSiglaCodigo.close(); // opcional, descarrega o buffer e fecha o arquivo.
 }
 
-CCodigoDisciplina CGestorCodigoDisciplina::DefinirCodigoDisciplina() {
+CCodigoDisciplina CGestorCodigoDisciplina::DefinirCodigoDisciplina() const {
   std::string sigla;
   std::cout << "\nEntre com a sigla do departamento:";
   std::getline(std::cin , sigla);
   return DefinirCodigoDisciplina(sigla);
 }
 
-CCodigoDisciplina CGestorCodigoDisciplina::DefinirCodigoDisciplina(std::string siglaDepartamento)
+CCodigoDisciplina CGestorCodigoDisciplina::DefinirCodigoDisciplina(std::string siglaDepartamento) const
 {
   // Se o departamento ainda não existe pede para criar antes de definir o código.
   if(! map_ultimoCodigoUsado.contains(siglaDepartamento)) {
@@ -88,16 +88,9 @@ void CGestorCodigoDisciplina::AdicionarDepartamento(std::string siglaDepartament
   }
 }
 
-void CGestorCodigoDisciplina::VisualizarTabelaDepartamentoUltimoCodigo()
+void CGestorCodigoDisciplina::VisualizarTabelaDepartamentoUltimoCodigo() const
 {
   cout <<"\nMapa com siglas dos departamentos e últimos códigos utilizados\n";
   for( auto& [sigla,codigoNumerico]: map_ultimoCodigoUsado )
     cout << sigla << ' ' << codigoNumerico << '\n';
 }
-
-// bool CGestorCodigoDisciplina::VerificarCodigo(std::string codigoASerVerificado)
-// {
-//   //..Implementar.
-//   // precisa decompor o código, ex: LEP-0011 -> LEP e 11
-//   // e verificar se esta no map.
-// }

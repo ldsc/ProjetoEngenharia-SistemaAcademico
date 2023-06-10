@@ -14,16 +14,16 @@
 class CCodigoDisciplina
 {
   /// Código da disciplina.
-  std::string codigoDisciplina {"xxx-nnnn"};
+  const std::string codigoDisciplina {"xxx-nnnn"};
 
 public:
   /// Padrão para código de disciplina.
-  static std::string_view padrao;
+  static const std::string_view padrao;
 
 private:
   /// Construtor privado, só pode ser acessado pelo gestor, classe CGestorCodigoDisciplina.
   /// Construtor sobrecarregado, o gestor gera o código.
-  CCodigoDisciplina(std::string _codigoDisciplina) { codigoDisciplina = _codigoDisciplina; }
+  CCodigoDisciplina(const std::string _codigoDisciplina) : codigoDisciplina (_codigoDisciplina){ }
 
   /// Fornece a classe CGestorCodigoDisciplina acesso as funcionalidades de CCodigoDisciplina.
   // Na prática apenas o gestor vai poder criar um CCodigoDisciplina.
@@ -39,16 +39,16 @@ private:
   // }
 public:
   /// Retorna padrão para o código de disciplina.
-  static std::string_view PadraoCodigoDisciplina() { return padrao;  }
+  static const std::string_view PadraoCodigoDisciplina() { return padrao;  }
 
   /// Retorna código disciplina.
-  std::string CodigoDisciplina()      { return codigoDisciplina;  }
+  const std::string CodigoDisciplina()      { return codigoDisciplina;  }
 
   /// Retorna código disciplina.
-  std::string operator()()            { return codigoDisciplina;  }
+  const std::string operator()()            { return codigoDisciplina;  }
 
   /// Converte o objeto CCodigoDisciplina numa string.
-  operator std::string()              { return codigoDisciplina;  }
+  operator const std::string()              { return codigoDisciplina;  }
 
   /// Sobrecarga do operador de redirecionamento <<. Uso cout << codigoDisciplina;
   friend std::ostream& operator<<(std::ostream& os, CCodigoDisciplina& codigo) {

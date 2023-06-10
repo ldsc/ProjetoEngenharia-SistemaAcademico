@@ -1,20 +1,21 @@
-#ifndef CEmentaDisciplina_H
-#define CEmentaDisciplina_H
+#ifndef CGestorEmentaDisciplina_H
+#define CGestorEmentaDisciplina_H
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 #include <algorithm>
-//#include "CEstadoPersistente.h"
+#include "CEstadoPersistente.h"
 #include "CCodigoDisciplina.h"
 #include "ETipoAvaliacao.h"
 #include "CAssunto.h" //
 
-// O Assunto deve estar relacionado a uma (ou mais) áreas de conhecimento e ter uma descrição.
-
-/// A ementa da disciplina contém um conjunto extenso de informações relacionados a disciplina.
-class CEmentaDisciplina: public CEstadoPersistente
+/// A ementa da disciplina contém um conjunto extenso de informações
+/// que são armazenadas em arquivos localizados em dados/EmentaDisciplina/
+/// O nome dos arquivos armazenados é da forma CCodigoDisciplina-Ano-Semestre.
+/// ex: LEP-0132-2023-1
+class CGestorEmentaDisciplina: public CEstadoPersistente
 {
 private:
   CCodigoDisciplina codigoDisciplina;
@@ -31,14 +32,14 @@ public:
   /// Caminho para diretório onde os dados serão armazenados.
   static std::string caminhoDiretorio;
   /// Map com código da disciplina e shared_ptr para ementas.
-  static std::map<CCodigoDisciplina,shared_ptr<CEmentaDisciplina> > map_codigoDisciplina_spEmentaDisciplina;
+  static std::map<CCodigoDisciplina,shared_ptr<CGestorEmentaDisciplina> > map_codigoDisciplina_spEmentaDisciplina;
 
 public:
   /// Construtor.
-  CEmentaDisciplina();
+  CGestorEmentaDisciplina();
 
   /// Destrutor.
-  virtual ~CEmentaDisciplina();
+  virtual ~CGestorEmentaDisciplina();
 
   /// Define ou redefine toda a ementa.
   void DefinirEmenta();
@@ -139,6 +140,6 @@ public:
   void Visualizar() { std::cout << *this; };
 
   /// Sobrecarga operador redirecionamento para cout ou fout.
-  std::ostream& operator<<(std::ostream& os, CEmentaDisciplina& ementa);
+  std::ostream& operator<<(std::ostream& os, CGestorEmentaDisciplina& ementa);
 };
-#endif // CEmentaDisciplina_H
+#endif // CGestorEmentaDisciplina_H

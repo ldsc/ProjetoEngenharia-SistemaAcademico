@@ -1,4 +1,4 @@
-#include "CCodigoDisciplina.h"
+//#include "CCodigoDisciplina.h"
 #include "CEmentaDisciplina.h"
 
 using namespace std;

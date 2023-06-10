@@ -11,10 +11,10 @@
 class CEstadoPersistente
 {
 public:
-  virtual void CaminhoDiretorio(std::string _caminhoDiretorio) = 0 ;
-  virtual std::string  CaminhoDiretorio()                      = 0 ;
-  virtual void NomeArquivo(std::string _nomeArquivo)           = 0 ;
-  virtual std::string  NomeArquivo()                           = 0 ;
+  virtual void CaminhoDiretorio(const std::string _caminhoDiretorio) = 0 ;
+  virtual const std::string  CaminhoDiretorio() const                      = 0 ;
+  virtual void NomeArquivo(const std::string _nomeArquivo)           = 0 ;
+  virtual const std::string  NomeArquivo() const                           = 0 ;
 
   // /// Salva último estado.
   // virtual void SalvarEstado() = 0;
@@ -22,9 +22,9 @@ public:
   // void RecuperarEstado() = 0;
   /// Salva um estado específico. caminhoDiretorio + nomeArquivo + "-" + identificadorEstado
   // ex: dados/TabelaCodigoDisciplina-Estado.dat
-  virtual void SalvarEstado(std::string identificadorEstado = {} )    = 0 ;
+  virtual void SalvarEstado(const std::string identificadorEstado = {} ) const   = 0 ;
   /// Recupera um estado específico.
-  virtual void RecuperarEstado(std::string identificadorEstado = {} ) = 0 ;
+  virtual void RecuperarEstado(const std::string identificadorEstado = {} ) = 0 ;
 };
 #endif
 

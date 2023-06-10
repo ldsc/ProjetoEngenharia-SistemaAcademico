@@ -11,6 +11,7 @@ enum class ETipoAvaliacao : short int {
     provaEscritaDiscursiva,
     provaComputador,
     provaOral,
+    provaPraticaLaboratorio,
     listaExercicios,
     projeto,
     trabalhoDeCampo,

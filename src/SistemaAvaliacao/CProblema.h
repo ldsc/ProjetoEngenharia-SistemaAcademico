@@ -1,11 +1,11 @@
-
-#ifndef CPROBLEMA_H
-#define CPROBLEMA_H
+#ifndef CProblema_H
+#define CProblema_H
 
 #include <string>
 #include <vector>
 
-
+/// A classe CProblema se refere a um problema que precisa ser resolvido.
+/// Tem a descrição do problema de forma objetiva.
 class CProblema
 {
 public:
@@ -15,21 +15,21 @@ public:
   /// Empty Destructor
   virtual ~CProblema();
 
-  /// @return string
-  string DescricaoDoProblema()
+  /// @return std::string
+  std::string DescricaoDoProblema()
   {
     std::cout << "\nInstruções: Descreva o problema a ser resolvido."
-              << "\nSempre focando em problemas de engenharia.";
+              << "\nSempre focando em problemas associados ao curso (no nosso caso de engenharia).";
     return escopo;
   }
 
-  /// @return string
-  string DesenvolvimentoDaSolucao()
+  /// @return std::string
+  std::string DesenvolvimentoDaSolucao()
   {
   }
 
-  /// @return string
-  string DescricaoDaSolucao()
+  /// @return std::string
+  std::string DescricaoDaSolucao()
   {
   }
 
@@ -43,7 +43,7 @@ private:
   // Private attributes  
 
 
-  string escopo;
+  std::string escopo;
 
   // Public attribute accessor methods  
 
@@ -52,7 +52,7 @@ private:
   /// 
   /// Set the value of escopo
   /// @param value the new value of escopo
-  void setEscopo(string value)
+  void Escopo(std::string value)
   {
     escopo = value;
   }
@@ -60,13 +60,9 @@ private:
   /// 
   /// Get the value of escopo
   /// @return the value of escopo
-  string escopo()
+  std::string Escopo()
   {
     return escopo;
   }
-
-  void initAttributes();
-
 };
-
-#endif // CPROBLEMA_H
+#endif // CProblema_H

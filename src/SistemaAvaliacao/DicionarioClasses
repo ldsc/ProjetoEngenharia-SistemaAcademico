@@ -1,0 +1,83 @@
+%Dicionário de classes
+#NomeDaClasse BreveDescrição
+Requisitos ou explicações
+
+%Conceitos
+#CAreaConhecimento
+Representa uma área de conhecimento do CNPq (código e descrição).
+Será utilizado para mostrar o que será visto no curso.
+O código tem diferentes níveis:
+1.00.00.00-3 Ciências Exatas e da Terra
+1.01.00.00-8 Matemática
+1.01.01.00-4 Álgebra
+1.01.01.01-2 Conjuntos
+A descrição é um texto curto, mas bem abrangente (pode estar presente em mais de uma disciplina).
+Note que Matemática esta dentro de Ciências Exatas e da Terra. Álgebra esta dentro de matemática. Conjunto esta dentro de Álgebra. Posso ter algo como bool AreaConhecimento.Inclui(AreaConhecimento);
+
+%Disciplinas
+#CCodigoDisciplina
+É o código único da disciplina (variações de versão indicadas por Ano-Semestre).
+
+#CGestorCodigoDisciplina
+Classe que gerencia os códigos das disciplinas. Necessário para evitar duplicações.
+
+#CEmentaDisciplina
+É a ementa da disciplina com todas as informações associadas.
+A ementa deve ter uma lista com as CAreaConhecimento. A ideia é que o curso tenha uma lista com as CAreaConhecimento e que as disciplinas tenham cada uma sua lista; A soma das listas das áreas de conhecimento das disciplinas devem atender o que esta previsto para o curso.
+A ementa deve ter um conteúdoProgramático que é uma descrição curta da disciplina;
+A ementa deve ter uma lista de assuntos a serem vistos, preenchido pelo professor que elabora a ementa.
+Para cada assunto teremos uma carga horária associada.
+As avaliações devem ter assuntos e o software deve verificar se os assuntos da disciplina foram vistos nas avaliações.
+
+#CGestorEmentaDisciplina
+Classe que gerencia as ementas das disciplinas.
+Depois de validade e aprovada a ementa não pode ser apagada, mas pode ser substituida por nova versão (Ano-Semestre).
+
+#CAssunto
+Representa um assunto.
+Será utilizado para mostrar o que será visto na disciplina, nas avaliações.
+A ideia é ter uma lista com os assuntos a serem vistos na disciplina e poder verificar se as aulas e provas cobrem os assuntos.
+PS: Precisa definir se os assuntos estarão vinculados as CAreaConhecimento. Se sim viabiliza mais controle, se não fica mais livre. Sugiro pegar algumas ementas e verificar se consegue, para cada assunto, vincular a area de conhecimento de forma simples. Caso não consiga melhor deixar livre.
+
+#CProblema
+Representa um problema a ser resolvido (é um texto descritivo do problema).
+A ideia é que represente problemas reais, que envolvam diversas áreas do conhecimento e assuntos.
+Não sendo diretamente vinculados a áreas/assuntos específicos.
+
+#CProblemaEspecifico
+É um problema vinculado a determinadas áreas do cohecimento (e assuntos).
+
+#CTurma
+Representa uma turma, esta associada a uma ementa de disciplina, a uma sala, dia/hora.
+Note que uma disciplina pode ter várias turmas, inclusive no mesmo dia/hora, muda a sala.
+
+#CAvaliacaoTurma
+Visa avaliar a turma; quem avalia são os alunos. [Arquivado]
+
+#ETipoAvaliacao
+Enumeração com os diferentes tipos de avaliações.
+provaObjetivaMultiplaEscolha,    provaEscritaDiscursiva,    provaComputador,    provaOral,    provaPraticaLaboratorio, listaExercicios,   projeto,    trabalhoDeCampo,    avaliacaoTurma,    semAvaliacao
+
+#CSistemaAvaliacao
+Cada turma tem um sistema de avaliação que é composto de um número de avaliações e o peso de cada avaliação.
+As avaliações podem ser de diferentes tipos.
+O professor coordenador monta as avaliações, aplica e corrige. Os alunos preenchem a avaliação.
+
+#CAvaliacao
+Representa uma avaliação, por exemplo uma listaExercícios/prova/trabalho/projeto.
+O autor é o coordenador.
+Tem de ter uma lista com os assuntos vistos na avaliação, assim, a soma dos assuntos das avaliações deve corresponder em pelo menos 50%? o conteúdo dos assuntos das avaliações.
+Note que os assuntos normais podem ser os listados na disciplina e nos pré-requisitos.
+
+#CRespostaAvaliacao
+É a resposta de uma avaliação.
+Normalmente feita por um aluno.
+
+%Classes auxiliares
+#CEstadoPersistente
+Classe de interface para um gestor de dados que salva/lê estados dos objetos associados.
+
+#CVerificaPadrao
+Classe que verifica se um texto atende um determinado padrão.
+
+

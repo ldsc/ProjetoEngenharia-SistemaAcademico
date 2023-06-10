@@ -32,7 +32,7 @@ public:
   /// Nome do arquivo onde os dados serão armazenados.
   static std::string nomeArquivo;
   /// Map com as siglas dos laboratórios e código disponibilizado. O código vai crescendo de 0001 até 9999.
-  static std::map<std::string,int> map_ultimoCodigoUsado;
+  static std::map<const std::string,int> map_ultimoCodigoUsado;
 
 public:
   /// Construtor, recupera o último estado armazenado em disco, recuperando a tabela com sigla dos departamentos e último código utilizado.
@@ -41,7 +41,7 @@ public:
       RecuperarEstado();
   }
   /// Construtor, recupera um estado especifico (ex: um backup).
-  CGestorCodigoDisciplina(std::string identificadorEstado) {
+  CGestorCodigoDisciplina(const std::string identificadorEstado) {
       RecuperarEstado(identificadorEstado);
   }
 
@@ -51,11 +51,11 @@ public:
   }
 
   /// Define o código da disciplina pede a sigla do departamento.
-  CCodigoDisciplina DefinirCodigoDisciplina();
+  CCodigoDisciplina DefinirCodigoDisciplina() const;
 
   /// Define o código da disciplina com base na sigla do departamento.
   /// Também poderia alterar e já modificar o arquivo (+seguro).
-  CCodigoDisciplina DefinirCodigoDisciplina(std::string siglaDepartamento);
+  CCodigoDisciplina DefinirCodigoDisciplina(const std::string siglaDepartamento) const;
   
   /// @return bool
   //...no caso da universidade ter um padrão de código a verificar...
@@ -63,28 +63,28 @@ public:
 
   /// Adiciona um novo departamento.
   // Se informar nome de departamento existente desconsidera e emite alerta.
-  void AdicionarDepartamento(std::string siglaDepartamento, int codigoInicial = 0);
+  void AdicionarDepartamento(const std::string siglaDepartamento, const int codigoInicial = 0);
 
-  /// Recebe sigla departamento e gera código disciplina.
-  CCodigoDisciplina  operator()(std::string siglaDepartamento)
+  /// Recebe sigla departamento e gera código disciplina. ex: codigo = gestorCodigo(siglaDepartamento);
+  CCodigoDisciplina  operator()(const std::string siglaDepartamento) const
                                       { return DefinirCodigoDisciplina(siglaDepartamento); }
 
   /// Visualizar tabela codigos.
-  void VisualizarTabelaDepartamentoUltimoCodigo();
-  virtual void Visualizar()           { VisualizarTabelaDepartamentoUltimoCodigo(); };
+  void VisualizarTabelaDepartamentoUltimoCodigo() const;
+  virtual void Visualizar()    const        { VisualizarTabelaDepartamentoUltimoCodigo(); };
 
   // Implementa Métodos da classe persistente
 public:
   /// Seta caminho para o diretório com os arquivos siglaDepartamento - código usado.
-  virtual void CaminhoDiretorio(std::string _caminhoDiretorio)  { caminhoDiretorio = _caminhoDiretorio; };
+  virtual void CaminhoDiretorio(const std::string _caminhoDiretorio)  { caminhoDiretorio = _caminhoDiretorio; };
   /// Retorna caminho para o diretório com os arquivos siglaDepartamento - código usado.
-  virtual std::string  CaminhoDiretorio()                       { return caminhoDiretorio; };
+  virtual const std::string  CaminhoDiretorio()  const                      { return caminhoDiretorio; };
   /// Seta nome arquivo com a base de dados.
-  virtual void NomeArquivo(std::string _nomeArquivo)            { nomeArquivo = _nomeArquivo; };
+  virtual void NomeArquivo(const std::string _nomeArquivo)            { nomeArquivo = _nomeArquivo; };
   /// Retorna nome arquivo com a base de dados.
-  virtual std::string  NomeArquivo()                            { return nomeArquivo; };
+  virtual const std::string  NomeArquivo()    const                         { return nomeArquivo; };
   /// Salva um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  virtual void SalvarEstado(std::string identificadorEstado = {});
+  virtual void SalvarEstado(const std::string identificadorEstado = {}) const;
   /// Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
   virtual void RecuperarEstado(std::string identificadorEstado = {});
 };

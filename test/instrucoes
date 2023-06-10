@@ -1,6 +1,6 @@
 Coloque aqui:
-- Uma cópia do programa executável
-- Uma cópia de todos os arquivos necessários para rodar o programa
+- Uma cópia do(s) programa(s) executável(veis)
+- Uma cópia de todos os arquivos necessários para rodar o programa ou testes.
 A ideia é que o usuário, lê a documentação de como usar o software e então executa os testes neste diretório;
 Note que ele vai testar o programa sem ler nada relacionado a como o software foi desenvolvido;
 ele age como usuário e não como desenvolvedor;
@@ -10,4 +10,4 @@ Enfim, tenha em mente que ele pode atuar de duas formas:
 - Apenas Usuário
 - Usuário e Desenvolvedor.
 
-Neste diretório test as instruções para o usuário final, sem detalhes de desenvolvedor.
+Neste diretório teste as instruções para o usuário final, sem detalhes de desenvolvedor.
