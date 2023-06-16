@@ -27,4 +27,3 @@ public:
   virtual void RecuperarEstado(const std::string identificadorEstado = {} ) = 0 ;
 };
 #endif
-

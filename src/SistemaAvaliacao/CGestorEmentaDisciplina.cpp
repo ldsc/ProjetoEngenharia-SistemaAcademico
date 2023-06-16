@@ -1,218 +1,175 @@
+#include <filesystem>
 #include "CGestorEmentaDisciplina.h"
+#include "CGestorCodigoDisciplina.h"
+
+namespace fs = std::filesystem;
 
 // Variáveis estáticas, compartilhadas entre objetos.
 std::string CGestorEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
 //std::string CGestorEmentaDisciplina::nomeArquivo      = "mapCodigoEmenta-"; // padrão, sem o estado
 
-std::map<CCodigoDisciplina,shared_ptr<CGestorEmentaDisciplina> > CGestorEmentaDisciplina::map_codigoDisciplina_spEmentaDisciplina;
-
+//std::map<CCodigoDisciplina,shared_ptr<CGestorEmentaDisciplina> > CGestorEmentaDisciplina::map_codigoDisciplina_spEmentaDisciplina;
 
 CGestorEmentaDisciplina::CGestorEmentaDisciplina() {
-  DefinirEmenta();
 }
 
-CGestorEmentaDisciplina::~CGestorEmentaDisciplina(){ SalvarEstado(); };
-
-void DefinirEmenta() {
-    DefinirCodigoDisciplina();
-    DefinirNomeDisciplina();
-    DefinirPreRequisito();
-    DefinirReferenciaBibliografica();
-    DefinirSistemaAvaliacao();
-    DefinirConteudoProgramatico();
-    DefinirAssunto();
-    DefinirVersao();
-    SalvarEstado(); // salva a ementa em arquivo de disco
+CGestorEmentaDisciplina::~CGestorEmentaDisciplina(){
 }
 
-void CGestorEmentaDisciplina::DefinirCodigoDisciplina()
-{
-  codigoDisciplina = CCodigoDisciplina::DefinirCodigo();
-  std::cout << "\nCódigo da disciplina definido automaticamente: " << codigoDisciplina;
-}
-
-void DefinirNomeDisciplina() {
-  std::cout << "\nEntre com o nome da disciplina:";
-  std::getline(std::cin , nome);
-}
-
-void CGestorEmentaDisciplina::DefinirPreRequisito()
-{
-  std::cout << "\nA disciplina tem pré-requisitos (s/n):";
-  char resp{'s'};
+void CGestorEmentaDisciplina::Menu() {
+  char resp = 's';
+  do {
+  std::cout << "\n<---------------------------------->"
+            << "\n<------ Menu Gestor Ementas ------->"
+            << "\n<---------------------------------->"
+            << "\n<---Geral--->"
+            << "\n Listar ementas.................1"
+            << "\n criar Nova ementa..............2"
+            << "\n Carregar ementa do disco.......3";
+  if(ementa != nullptr )
+  std::cout << "\n<--- Ementa disciplina " << ementa->CodigoDisciplina() << " --->"
+            << "\n Definir.............4"
+            << "\n Revisar.............5"
+            << "\n Ativar..............6"
+            << "\n desaTivar...........7"
+            << "\n Visualizar..........8"
+            << "\n Salvar..............9";
+  std::cout << "\nSair/Quit............q : ";
   std::cin.get(resp); std::cin.get();
-  if (resp == 'n' or resp == 'N')
+  std::cout << "\nSelecionou a opção : " << resp
+            << "\n<---------------------------------->\n";
+  if( resp == 'q' or resp == 'Q')
     return;
-  // CCurso::ListaDisciplinas("");
-  // Precisamos da lista de disciplinas... Código e nome
-  // Ex: LEP-0001 Fundamentos de Computação
-  std::cout << "\nLista de códigos das disciplinas (conteúdo de dados/EmentaDisciplina/)):";
-  system("ls dados/EmentaDisciplina/");
-  std::string sCodigoDisciplinaPreRequisito;
-  CCodigoDisciplina codigo;
-  do {
-    std::cout << "\nEntre com o código da disciplina pré-requisito (digite ctrl+d para encerrar a entrada):";
-    getline(std::cin,sCodigoDisciplinaPreRequisito);
-    if(std::cin.good()) {
-      codigo.CodigoDisciplina(sCodigoDisciplinaPreRequisito);
-      preRequisito.push_back(codigo);
-    }
-  } while(std::cin.good());
-  std::cin.clear();
-  std::unique(preRequisito.begin(), preRequisito.end()); // elimina repetições se houver
+  // else if(ementa == nullptr and resp != '1' and resp != '2' and resp != '3') {
+  //   std::cerr << "\nPrecisa criar ou carregar a ementa antes de manipular a mesma.";
+  //   continue; //resp = 100;
+  //   }
+  switch (resp) {
+    case 'l': ListarEmentas();        break;
+    case 'L': ListarEmentas();        break;
+    case '1': ListarEmentas();        break;
+    case 'n':
+    case 'N':
+    case '2': CriarEmenta();          break;
+    case 'c':
+    case 'C':
+    case '3': CarregarEmentaDisco();  break;
+    case 'd':
+    case 'D':
+    case '4': DefinirEmenta();        break;
+    case 'r':
+    case 'R':
+    case '5': RevisarEmenta();        break;
+    case 'a':
+    case 'A':
+    case '6': AtivarEmenta();         break;
+    case 't':
+    case 'T':
+    case '7': DesativarEmenta();      break;
+    case 'v':
+    case 'V':
+    case '8': VisualizarEmenta();     break;
+    case 's':
+    case 'S':
+    case '9': SalvarEmenta();         break;
+    default:
+              std::cerr << "\nOpção inválida!";
+  }
+  } while (resp != 'q' or resp != 'Q');
 }
 
-void CGestorEmentaDisciplina::DefinirReferenciaBibliografica()
-{
-  // CCurso::ListaDisciplinas("");
-  // Precisamos da lista de bibliografias se tiver...
-  std::string referencia;
-  do {
-    std::cout << "\nEntre com a referência bibliográfica\
-                  \n Autor(es); Titulo; Editora; Edição; Ano; Observações.\
-                  \n (digite ctrl+d para encerrar a entrada):";
-    getline(std::cin,referencia);
-    referenciaBibliografica.push_back(referencia);
-  } while(std::cin.good());
-  std::cin.clear();
+// estado = rascunho
+void CGestorEmentaDisciplina::CriarEmenta() {
+    VerificarSeEParaSalvar();
+    // Elimina a antiga para a qual apontava.
+    ementa.reset();
+    // Gera CCodigoDisciplina nova e passa para construtor ementa
+    // CriarCodigoDisciplina() vai pedir o nome do departamento.
+    //ementa = std::make_shared<CEmentaDisciplina> (CGestorCodigoDisciplina::CriarCodigoDisciplina());
+    auto codigoDisciplina = CGestorCodigoDisciplina::CriarCodigoDisciplina();
+    ementa = std::make_shared<CEmentaDisciplina> (codigoDisciplina.ToString());
+    std::cout << "\nCriou ementa nova, vazia, estado rascunho, código: "
+              << ementa->CodigoDisciplina() << '\n';
+    ementaAtivaModificada = true;
 }
 
-void CGestorEmentaDisciplina::DefinirSistemaAvaliacao() {
-  int numeroAvaliacoes{};
-  ListarTiposAvaliacoes();
-  std::cout << "\nEntre com o número de avaliações:";
-  std::cin >> numeroAvaliacoes; std::cin.get();
-  ETipoAvaliacao tipo{};
-  for ( int i = 1; i <= numeroAvaliacoes; i++ ) {
-    std::cout << "\nPara a avaliação ["<< i << "], entre com o tipo de avaliação:";
-    tipo = MenuSelecaoTipoAvaliacao(); // opção inválida...tratar
-    sistemaAvaliacao.push_back( tipo );
+// estado = rascunho
+void CGestorEmentaDisciplina::CarregarEmentaDisco() {
+std::cerr << "\nCGestorEmentaDisciplina::CarregarEmentaDisco()";
+  VerificarSeEParaSalvar();
+  // Elimina a antiga para a qual apontava.
+  ementa.reset();
+
+  ListarEmentas();
+  std::cout << "\nInforme o nome do arquivo com a ementa (ex: rascunho/LEP-1523, aguardandoAprovacao/LEP-1523, ativa/LEP-1523 inativa/LEP-1523): ";
+  std::string nomeArquivo;
+  std::getline(std::cin, nomeArquivo); // LEP-1523-ano-versao LEP-1523-2023-1
+  try {
+  // Cria ementa vazia
+  std::string sCodigoDisciplina = nomeArquivo.substr(nomeArquivo.size()-8,nomeArquivo.size());
+  ementa = std::make_shared<CEmentaDisciplina> (CGestorCodigoDisciplina::RetornarCodigoDisciplinaExistente(sCodigoDisciplina));
+  // carrega do disco
+  std::cout << "\nVai recuperar do disco a disciplina " << ementa->CodigoDisciplina() << "\n";
+  ementa->RecuperarEstado(nomeArquivo);
+  ementaAtivaModificada = true;
+  }
+  catch(...) {
+    std::cerr << "\nFalha no carregamento de ementa do disco!\n";
   }
 }
 
-void CGestorEmentaDisciplina::DefinirConteudoProgramatico(){
-  std::cout << "\nEntre com o conteúdo programático (resumo), pressione ctrl+d para encerrar:";
-  std::string linha;
-  conteudoProgramatico = {};
-  do {
-    getline(std::cin,linha);
-    if ( std::cin.good() )
-      conteudoProgramatico += linha;
-  } while(std::cin.good());
-  std::cin.clear();
+// estado = rascunho, pede todos os dados
+void CGestorEmentaDisciplina::DefinirEmenta() {
+  ementaAtivaModificada = true;
+  ementa->Definir();
 }
 
-void CGestorEmentaDisciplina::DefinirAssuntos(){
-  int i{1};
-  CAssunto assunto_i;
-  std::string sAssunto;
-  CAssunto::ListarAssuntos();
-  do{
-    std::cout << "\nEntre com o assunto " << i << " (ctrl+d para encerrar):\n";
-    std::getline(cin,sAssunto);
-    if(cin.good())
-      assunto.push_back(CAssunto{sAssunto});
-  } while ( cin.good() );
+// estado = rascunho
+void CGestorEmentaDisciplina::RevisarEmenta() {
+  //CarregarEmentaDisco();
+  ementaAtivaModificada = true;
+  ementa->MenuRevisao();
 }
 
-void CGestorEmentaDisciplina::DefinirVersao() {
-  int ano{2023};
-  int semestre{1};
-  std::cout << "\nEntre com o ano da ementa:\n";
-  std::cin >> ano;
-  std::cout << "\nEntre com o semestre da ementa (1,2,3 - verão):\n";
-  std::cin >> semestre;
-  versao = {ano,semestre}; // Versão da ementa <Ano,Semestre>
+// estado = ativa
+void CGestorEmentaDisciplina::AtivarEmenta() {
+  ementaAtivaModificada = true;
+  ementa->estado =  EEstadoEmentaDisciplina::ativa;
 }
 
-// Cria arquivo com a ementa:
-// Ex: dados/EmentaDisciplina/LEP-0011-2019-1.dat
-// Ex: dados/EmentaDisciplina/LEP-0011-2023-1.dat
-void CGestorEmentaDisciplina::SalvarEstado(std::string identificadorEstado )
-{
-    std::string sVersao = to_string(versao.first) +"-"+ to_string(versao.second);
-    std::string caminhoCompleto = caminhoDiretorio + CCodigoDisciplina +"-"+ sVersao + ".dat";
-    std::ofstream arquivoEmenta (caminhoCompleto);
-    if(arquivoEmenta.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para escrita... encerrando!\n";
-      exit(0);
-    }
-    arquivoEmenta << *this;
+// estado = inativa
+void CGestorEmentaDisciplina::DesativarEmenta() {
+  ementaAtivaModificada = true;
+  ementa->estado =  EEstadoEmentaDisciplina::desativa;
 }
 
-// Precisa receber o nome do arquivo na variável identificadorEstado
-// note que não entra a extensão .dat.
-void CGestorEmentaDisciplina::RecuperarEstado(std::string identificadorEstado )
-{
-   constexpr auto max_size = std::numeric_limits<std::streamsize>::max();
-   std::string caminhoCompleto = caminhoDiretorio + identificadorEstado + ".dat";
-    std::ifstream ementa (caminhoCompleto);
-    std::string linha;
-    size_t size{};
-    ementa.ignore(max_size,'\n'); // ignora #EmentaDisciplina:
-    ementa.ignore(max_size,'\n'); // ignora -> codigoDisciplina:
-    getline(ementa,linha);
-    codigoDisciplina.CodigoDisciplina (linha);
-    ementa.ignore(max_size,'\n'); // ignora -> nome
-    getline(ementa,nome);
-    ementa.ignore(max_size,'\n'); // ignora -> preRequisito:
-    ementa >> size;
-    preRequisito.resize(size);
-    for(size_t i = 0; i < preRequisito.size(); i++) {
-      getline(ementa,linha);
-      preRequisito[i].CodigoDisciplina(linha);
+// Listar os diretórios
+void CGestorEmentaDisciplina::ListarEmentas() {
+// listar o diretorio
+ std::cout << "\nConteúdo do diretório " << caminhoDiretorio;
+ for (auto const& dir_entry : std::filesystem::recursive_directory_iterator{caminhoDiretorio})
+    {
+        std::cout << '\n' << dir_entry ;
     }
-    ementa.ignore(max_size,'\n'); // ignora -> Referencias bibliográficas
-    ementa >> size;
-    referenciaBibliografica.resize(size);
-    for(size_t i = 0; i < referenciaBibliografica.size(); i++) {
-      getline(ementa,referenciaBibliografica[i]);
-    }
-    ementa.ignore(max_size,'\n'); // ignora -> sistemaAvaliacao (tipo de avaliacao):
-    ementa >> size;
-    sistemaAvaliacao.resize(size);
-    for(size_t i = 0; i < sistemaAvaliacao.size(); i++) {
-      getline(ementa,linha);
-      sistemaAvaliacao[i] = TipoAvaliacao(linha);
-    }
-    ementa.ignore(max_size,'\n'); // ignora -> conteudoProgramatico:
-    getline(ementa,conteudoProgramatico); //várias linhas? separador??
-    ementa.ignore(max_size,'\n'); // ignora -> assuntos:
-    ementa >> size;
-    assuntos.resize(size);
-    for(size_t i = 0; i < assuntos.size(); i++) {
-      getline(ementa,assuntos[i]);
-    }
-    ementa.ignore(max_size,'\n'); // ignora -> versao:
-    int ano;
-    ementa >> ano;
-    char traco;
-    ementa >> traco;
-    int semestre;
-    ementa >> semestre;
-    versao = {ano,semestre};
+ std::cout << '\n';
 }
 
-std::ostream& operator<<(std::ostream& arquivo, CGestorEmentaDisciplina& ementa) {
-    arquivo << "#EmentaDisciplina:\n"
-          << "-> codigoDisciplina:\n"
-          << codigoDisciplina
-          << "\n-> nome:\n" << nome;
-          << "\n-> preRequisito:\n"
-          << preRequisito.size();
-    std::copy(preRequisito.begin(),preRequisito.end(),std::ostream_iterator<CCodigoDisciplina>(arquivo, '\n'))
-    arquivo << "\n-> Referencias bibliográficas\n"
-           << referenciaBibliografica.size() << '\n';
-    std::for_each(referenciaBibliografica.begin(),referenciaBibliografica.end(),[](auto&ref){ arquivo << ref << '\n'; });
-    arquivo << "\n-> sistemaAvaliacao (tipo de avaliacao):\n"
-          << sistemaAvaliacao.size() << '\n';
-    std::for_each(sistemaAvaliacao.begin(),sistemaAvaliacao.end(),[](ETipoAvaliacao&tipo){ arquivo << tipo << '\n'; });
-    arquivo << "\n-> conteudoProgramatico:\n"
-           << conteudoProgramatico;
-           << "\n-> assuntos:\n"
-           << assunto.size() << '\n';
-    std::copy(assunto.begin(),assunto.end(),std::ostream_iterator<CAssunto>(arquivo, '\n'))
-    std::string sVersao = to_string(versao.first) +"-"+ to_string(versao.second);
-    arquivo << "\n-> versao:\n" << sVersao;
-    return os;
+void CGestorEmentaDisciplina::VisualizarEmenta() {
+ std::cout << *ementa;
+}
+
+void CGestorEmentaDisciplina::SalvarEmenta(){
+ ementa->SalvarEstado();
+ ementaAtivaModificada = false;
+}
+
+void CGestorEmentaDisciplina::VerificarSeEParaSalvar() {
+  if(ementa != nullptr) {
+    std::cout << "\nA ementa, código : " << ementa->CodigoDisciplina()
+              << "\nfoi alterada, deseja salvar (s/n)? ";
+    char resp = 'n';
+    std::cin.get(resp); std::cin.get();
+    if(resp != 'n')// or resp == 'S')
+      SalvarEmenta();
+    }
 }

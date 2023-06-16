@@ -1,0 +1,36 @@
+#EmentaDisciplina:
+-> nome:
+C++
+-> areaDoConhecimento:
+0
+-> preRequisito:
+0
+-> Referencias bibliográficas
+3
+andre; c++; novatec;2023
+stroustroup; 2020
+stroustroup; 2023
+-> sistemaAvaliacao (tipo de avaliacao):
+3
+Prova Escrita Discursiva
+Prova Escrita Discursiva
+Prova Escrita Discursiva
+-> conteudoProgramatico:
+resumo da ementa de c++
+iso c++
+porque
+conceitos
+aplicacoes
+-> assuntos e carga horária:
+4
+iso c++
+2
+porque c++
+2
+conceitos de c++
+12
+aplicacoes de c++
+12
+-> versao:
+2023-2
+

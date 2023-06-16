@@ -6,6 +6,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <map>
 #include "CEstadoPersistente.h"
 #include "CCodigoAreaConhecimento.h"
 
@@ -30,7 +31,7 @@ public:
 
 public:
   /// Construtor, recupera o último estado armazenado em disco, recuperando a tabela com código da área do conhecimento e descrição.
-  CGestorAreaConhecimento() ;
+  explicit CGestorAreaConhecimento() ;
   /// Construtor, recupera um estado especifico (ex: um backup).
   CGestorAreaConhecimento(const std::string identificadorEstado);
 
@@ -39,7 +40,7 @@ public:
 
   /// Mostra as areas do conhecimento e pede para usuário escolher qual quer.
   // A Area de conhecimento é apenas o código.
-  CCodigoAreaConhecimento DefinirAreaConhecimento();
+  static CCodigoAreaConhecimento DefinirAreaConhecimento();
 
   /// Dado o código da área de conhecimento retorna a descrição.
   static std::string DescricaoAreaConhecimento(CCodigoAreaConhecimento& ac);
@@ -52,11 +53,11 @@ public:
   //std::string  operator()()  { return codigo; }
 
   /// Visualizar tabela AreaConhecimento (código e descrição).
-  void VisualizarTabelaAreaConhecimento();
+  static void VisualizarTabelaAreaConhecimento();
   virtual void Visualizar()           { VisualizarTabelaAreaConhecimento(); };
 
   /// Visualizar tabela de area de conhecimento a partir de vetor de codigoASerVerificado
-  void VisualizarTabelaAreaConhecimento(std::vector<CCodigoAreaConhecimento>& vCodigo);
+  static void VisualizarTabelaAreaConhecimento(std::vector<CCodigoAreaConhecimento>& vCodigo);
 
   // Implementa Métodos da classe persistente
 public:

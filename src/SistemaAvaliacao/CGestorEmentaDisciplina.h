@@ -6,140 +6,60 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <memory>
 #include "CEstadoPersistente.h"
-#include "CCodigoDisciplina.h"
-#include "ETipoAvaliacao.h"
-#include "CAssunto.h" //
+// #include "CCodigoDisciplina.h"
+// #include "CGestorCodigoDisciplina.h"
+#include "CEmentaDisciplina.h"
 
-/// A ementa da disciplina contém um conjunto extenso de informações
-/// que são armazenadas em arquivos localizados em dados/EmentaDisciplina/
-/// O nome dos arquivos armazenados é da forma CCodigoDisciplina-Ano-Semestre.
-/// ex: LEP-0132-2023-1
-class CGestorEmentaDisciplina: public CEstadoPersistente
+/// Gerencia as ementas das disciplinas.
+class CGestorEmentaDisciplina
 {
-private:
-  CCodigoDisciplina codigoDisciplina;
-  std::string nome;
-  std::vector<CCodigoDisciplina> preRequisito;
-  std::vector<std::string> referenciaBibliografica; // CReferenciaBibliografica referencia;
-  std::vector<ETipoAvaliacao> tipoAvaliacao;
-  std::string conteudoProgramatico;
-  std::vector<CAssunto> assunto;
-  std::pair<int,int> versao; // Versão da ementa <Ano,Semestre>
+  bool ementaAtivaModificada = false;
 
 public:
   // Gestão da lista de disciplinas localizadas em dados/EmentaDisciplina/
   /// Caminho para diretório onde os dados serão armazenados.
   static std::string caminhoDiretorio;
-  /// Map com código da disciplina e shared_ptr para ementas.
-  static std::map<CCodigoDisciplina,shared_ptr<CGestorEmentaDisciplina> > map_codigoDisciplina_spEmentaDisciplina;
+
+  /// Map com código da disciplina e path para ementas.
+  //static std::map<CCodigoDisciplina,std::filesystem::path > map_codigoDisciplina_path;
+
+  /// Map com código da disciplina e ementas.
+  //static std::map<CCodigoDisciplina,CEmentaDisciplina > map_codigoDisciplina_ementa;
+  std::shared_ptr<CEmentaDisciplina> ementa;
 
 public:
   /// Construtor.
-  CGestorEmentaDisciplina();
+  explicit CGestorEmentaDisciplina();
 
   /// Destrutor.
   virtual ~CGestorEmentaDisciplina();
 
-  /// Define ou redefine toda a ementa.
+  // Menu com opções do gestor de ementas.
+  void Menu() ;
+
+  /// Criar ementa, cria ementa nova, zerada, ou modifica uma existente.
+  void CriarEmenta();
+  /// Carrega ementa do disco.
+  void CarregarEmentaDisco();
+  /// Definir ementa vai pedir, um a um os dados da ementa.
   void DefinirEmenta();
+  /// Revisar ementa permite alterar as informações da ementa (a ementa já existe). Vai perguntar o que quer atualizar.
+  void RevisarEmenta();
+  /// Ativar ementa muda o estado da ementa para  ativa, requer aprovação nos conselhos.
+  void AtivarEmenta();
+  /// Desativar ementa. Quando a disciplina deixa de existir. É movida para diretório de ementas inativas.
+  void DesativarEmenta();
+  /// Lista as ementas
+  void ListarEmentas();
+  /// Visualiza uma ementa específica
+  void VisualizarEmenta();
+  /// Salva  a ementa no disco (o estado define o diretório)
+  void SalvarEmenta();
 
-  /// Define o código da disciplina.
-  void DefinirCodigoDisciplina();
-
-  /// Retorna o código da disciplina
-  std::string CodigoDisciplina()   { return codigoDisciplina; }
-
-  /// Define o nome da disciplina.
-  void DefinirNomeDisciplina();
-
-  /// Seta o nome da disciplina.
-  void Nome(string value)   { nome = value; }
-
-  /// Retorna o nome da disciplina.
-  std::string Nome()        { return nome; }
-
-  /// Seta vetor com  os pré-requisitos.
-  void PreRequisito(std::vector<std::string>& value)
-                            { preRequisito = value; }
-
-  /// Retorna vetor com os pré-requisitos.
-  std::vector<std::string> PreRequisito()
-                            { return preRequisito; }
-
-  /// Definir os pré-requisitos.
-  void DefinirPreRequisito();
-
-  // Depois trocar por CReferenciaBibliografica
-  /// Seta vetor com as referencias bibliográficas.
-  void ReferenciaBibliografica(std::vector<std::string>& value)
-                            { referenciaBibliografica = value; }
-
-  // CReferenciaBibliografica
-  /// Retorna vetor com as referencias bibliográficas.
-  std::vector<std::string> ReferenciaBibliografica()
-                            { return referenciaBibliografica; }
-
-  /// Definir a referencia bibliográfica.
-  void DefinirReferenciaBibliografica();
-
-  /// Seta vetor com sistema de avaliação.
-  void TipoAvaliacao(std::vector<ETipoAvaliacao>& value)
-                            { tipoAvaliacao = value; }
-  /// Retorna vetor com tipoAvaliacao.
-  std::vector<ETipoAvaliacao> TipoAvaliacao()
-                            { return tipoAvaliacao; }
-
-  /// Define o sistema de avaliação.
-  void DefinirSistemaAvaliacao();
-
-  /// Set the value of conteudoProgramatico
-  /// @param value the new value of conteudoProgramatico
-  void ConteudoProgramatico(std::string value)
-                            { conteudoProgramatico = value; }
-
-  /// Get the value of conteudoProgramatico
-  /// @return the value of conteudoProgramatico
-  std::string conteudoProgramatico()
-                            { return conteudoProgramatico; }
-
-   void DefinirConteudoProgramatico();
-
-  /// A ementa é uma lista de assuntos.
-  void Assunto(std::vector<CAssunto> value)
-                            { assunto = value; }
-
-  /// Returna a lista de assuntos num vetor
-  std::vector<CAssunto> Assunto()
-                            { return assunto; }
-
-  /// Definir a lista de assuntos.
-  void DefinirAssunto();
-
-  /// Set the value of versao
-  /// @param value the new value of versao
-  void Versao(std::pair<int,int> ano_semestre)
-                            { versao = ano_semestre; }
-
-  /// Get the value of versao
-  /// @return the value of versao
-  std::pair<int,int> Versao()
-                            { return versao; }
-
-  /// Definir a versão da ementa (ano e semestre).
-  void DefinirVersao();
-
-  /// Salva um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  // O identificadorEstado é dado por Ano-Semestre
-  virtual void SalvarEstado(std::string identificadorEstado = {});
-  /// Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  // O identificadorEstado é dado por Ano-Semestre
-  virtual void RecuperarEstado(std::string identificadorEstado = {});
-
-  /// Visualizar, mostra ementa na tela.
-  void Visualizar() { std::cout << *this; };
-
-  /// Sobrecarga operador redirecionamento para cout ou fout.
-  std::ostream& operator<<(std::ostream& os, CGestorEmentaDisciplina& ementa);
+private:
+  /// Se a ementa ativa foi modificada pergunta se é para salvar.
+  void VerificarSeEParaSalvar();
 };
 #endif // CGestorEmentaDisciplina_H

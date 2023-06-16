@@ -8,7 +8,7 @@ using namespace std;
 // Variáveis estáticas, compartilhadas entre objetos.
 std::string CGestorAreaConhecimento::caminhoDiretorio = "dados/TabeladeAreasdoConhecimento/";
 
-std::string CGestorAreaConhecimento::nomeArquivo      = "TabeladeAreasdoConhecimento-Assuntos-"; // padrão, sem o estado
+std::string CGestorAreaConhecimento::nomeArquivo      = "TabeladeAreasdoConhecimento-Assuntos-EngenhariaPetroleo-"; // padrão, sem o estado
 
 std::map<std::string,std::string> CGestorAreaConhecimento::map_codigo_descricao;
 
@@ -26,13 +26,13 @@ CGestorAreaConhecimento::~CGestorAreaConhecimento() {
 }
 
 CCodigoAreaConhecimento CGestorAreaConhecimento::DefinirAreaConhecimento() {
-  VisualizarTabelaAreaConhecimento();
+  //VisualizarTabelaAreaConhecimento();
   std::string codigo;
   while(true) {
-  std::cout << "\nEntre com o codigo da área de conhecimento: ";
+  std::cout << "\nEntre com o codigo da área de conhecimento (q para sair): ";
   std::getline(std::cin, codigo);
   auto search = map_codigo_descricao.find(codigo);
-  if ( search != map_codigo_descricao.end())
+  if ( search != map_codigo_descricao.end() or codigo == "q" or codigo == "Q")
     return CCodigoAreaConhecimento(codigo);
   else
     cerr << "\nCódigo inválido, tente novamente.\n";

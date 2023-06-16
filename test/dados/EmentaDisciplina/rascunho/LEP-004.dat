@@ -1,0 +1,22 @@
+#EmentaDisciplina:
+-> nome:
+C++
+-> areaDoConhecimento:
+0-> preRequisito:
+0-> Referencias bibliográficas
+2
+andre;2023
+stroustroup;2015
+-> sistemaAvaliacao (tipo de avaliacao):
+2
+Prova Escrita Discursiva
+Prova Escrita Discursiva
+-> conteudoProgramatico:
+resumo
+da disciplina
+conteudo programativo resumido
+-> assuntos e carga horária:
+3
+
+-> versao:
+2023-1

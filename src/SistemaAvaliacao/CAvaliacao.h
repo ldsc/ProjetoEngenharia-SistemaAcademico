@@ -52,7 +52,7 @@ private:
 public:
   // Constructors/Destructors  
   /// Empty Constructor
-  CAvaliacao();
+  explicit CAvaliacao();
 
   /// Empty Destructor
   virtual ~CAvaliacao();

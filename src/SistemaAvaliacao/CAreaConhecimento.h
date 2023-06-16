@@ -19,7 +19,7 @@
 class CCodigoAreaConhecimento
 {
   /// Código da área do conhecimento.
-  std::string codigo;
+  std::string codigo {"n.nn.nn.nn-n"};
 
 public:
   /// Padrão para código da area do conhecimento.
@@ -28,12 +28,11 @@ public:
 private:
   /// Construtor privado, só pode ser acessado pelo gestor, classe CGestorAreaConhecimento.
   /// Construtor sobrecarregado, o gestor gera o código.
-  explicit CCodigoAreaConhecimento(const std::string _codigo): codigo(_codigo)  { }
+  CCodigoAreaConhecimento(const std::string _codigo): codigo(_codigo)  { }
 
   /// Fornece a classe CGestorAreaConhecimento acesso as funcionalidades de CCodigoAreaConhecimento.
   // Na prática apenas o gestor vai poder criar um CCodigoAreaConhecimento.
   friend class CGestorAreaConhecimento;
-  //friend class CEmentaDisciplina;
 
 public:
   /// Retorna padrão para o código da area do conhecimento.
@@ -44,8 +43,6 @@ public:
 
   /// Retorna descrição da área do conhecimento.
   std::string Descricao();
-  /// Retorna descrição da área do conhecimento.
-  std::string CodigoDescricao()       { return codigo + " " + Descricao(); };
 
   /// Retorna código area do conhecimento.
   std::string operator()()            { return codigo; }
