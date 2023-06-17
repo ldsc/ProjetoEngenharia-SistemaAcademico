@@ -1,20 +1,24 @@
 #include <iostream>
 #include <limits>
 #include <algorithm>
+#include <filesystem>
 #include "CGestorAreaConhecimento.h"
 
 using namespace std;
+namespace fs = std::filesystem;
 
 // Variáveis estáticas, compartilhadas entre objetos.
-std::string CGestorAreaConhecimento::caminhoDiretorio = "dados/TabeladeAreasdoConhecimento/";
+std::filesystem::path  CGestorAreaConhecimento::caminhoDiretorio = "dados/TabeladeAreasdoConhecimento/";
 
-std::string CGestorAreaConhecimento::nomeArquivo      = "TabeladeAreasdoConhecimento-Assuntos-EngenhariaPetroleo-"; // padrão, sem o estado
+std::filesystem::path  CGestorAreaConhecimento::nomeArquivo      = "TabeladeAreasdoConhecimento-Assuntos-EngenhariaPetroleo.dat"; // padrão, sem o estado
 
 std::map<std::string,std::string> CGestorAreaConhecimento::map_codigo_descricao;
 
+bool CGestorAreaConhecimento::mapNoDiscoAtualizado = true;
+
 CGestorAreaConhecimento::CGestorAreaConhecimento() {
     if(map_codigo_descricao.size() == 0)
-      RecuperarEstado();
+      RecuperarEstado(/*CGestorAreaConhecimento::nomeArquivo*/);
 }
 
 CGestorAreaConhecimento::CGestorAreaConhecimento(const std::string identificadorEstado) {
@@ -22,7 +26,8 @@ CGestorAreaConhecimento::CGestorAreaConhecimento(const std::string identificador
 }
 
 CGestorAreaConhecimento::~CGestorAreaConhecimento() {
-     SalvarEstado();
+  if( mapNoDiscoAtualizado == false )
+     SalvarEstado(CGestorAreaConhecimento::nomeArquivo);
 }
 
 CCodigoAreaConhecimento CGestorAreaConhecimento::DefinirAreaConhecimento() {
@@ -39,7 +44,7 @@ CCodigoAreaConhecimento CGestorAreaConhecimento::DefinirAreaConhecimento() {
   }
 }
 
-std::string CGestorAreaConhecimento::DescricaoAreaConhecimento(CCodigoAreaConhecimento& ac) {
+std::string CGestorAreaConhecimento::DescricaoAreaConhecimento(/*const*/ CCodigoAreaConhecimento& ac) {
   return map_codigo_descricao[ac];
 }
 
@@ -63,38 +68,48 @@ void CGestorAreaConhecimento::VisualizarTabelaAreaConhecimento(std::vector<CCodi
 //   // e verificar se esta no map.
 // }
 
-void CGestorAreaConhecimento::CaminhoDiretorio(const std::string _caminhoDiretorio)  { caminhoDiretorio = _caminhoDiretorio; };
+void CGestorAreaConhecimento::CaminhoDiretorio(const std::filesystem::path& _caminhoDiretorio)
+{ caminhoDiretorio = _caminhoDiretorio; };
 
-const std::string  CGestorAreaConhecimento::CaminhoDiretorio()  const { return caminhoDiretorio; };
+const std::filesystem::path& CGestorAreaConhecimento::CaminhoDiretorio()  const
+{ return caminhoDiretorio; };
 
-void CGestorAreaConhecimento::NomeArquivo(const std::string _nomeArquivo)            { nomeArquivo = _nomeArquivo; };
-
-const std::string  CGestorAreaConhecimento::NomeArquivo() const  { return nomeArquivo; };
-
-void CGestorAreaConhecimento::SalvarEstado(const std::string identificadorEstado) const
+void CGestorAreaConhecimento::NomeArquivo(const std::filesystem::path& _nomeArquivo)
 {
-    std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
-    std::ofstream arquivo (nomeCompleto);
+  nomeArquivo = _nomeArquivo;
+}
+
+const std::filesystem::path&  CGestorAreaConhecimento::NomeArquivo() const
+{ return nomeArquivo; };
+
+bool CGestorAreaConhecimento::SalvarArquivo(std::filesystem::path caminhoCompleto)  const
+{
+    std::ofstream arquivo (caminhoCompleto.string());
     if(arquivo.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << nomeCompleto << " para escrita... encerrando!\n";
-      exit(0);
+      cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para escrita... não salvou!\n";
+      //exit(0);
+      return false;
     }
     arquivo << "Tabela de Áreas do Conhecimento\n"; // cabeçalho.
     for( auto& [codigo,descricao]: map_codigo_descricao )
       arquivo << codigo << ' ' << descricao << '\n';
     arquivo.close(); // opcional, descarrega o buffer e fecha o arquivo.
+    return true;
 }
 
-void CGestorAreaConhecimento::RecuperarEstado(const std::string identificadorEstado)
+bool CGestorAreaConhecimento::RecuperarArquivo(std::filesystem::path caminhoCompleto)
 {
-    std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
-    std::ifstream arquivo (nomeCompleto);
+std::cerr << "\nDEBUG12 CaminhoDiretorio()=" << CaminhoDiretorio();
+std::cerr << "\nDEBUG12 NomeArquivo()=" << NomeArquivo();
+std::cerr << "\nDEBUG12 caminhoCompleto=" << caminhoCompleto;
+    std::ifstream arquivo (caminhoCompleto.string());
+    if(arquivo.fail()) {
+      cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para leitura... não carregou!\n";
+      //exit(0);
+      return false;
+    }
     std::string codigo;
     std::string descricao;
-    if(arquivo.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << nomeCompleto << " para leitura... encerrando!\n";
-      exit(0);
-    }
     map_codigo_descricao.clear(); // Apaga tudo pois vai recuperar do arquivo de disco.
     arquivo.ignore( std::numeric_limits<std::streamsize>::max(), '\n' ); // ignora linha comentário
     while (! arquivo.eof() ) {
@@ -102,4 +117,5 @@ void CGestorAreaConhecimento::RecuperarEstado(const std::string identificadorEst
       getline(arquivo,descricao);
       map_codigo_descricao[codigo] = descricao;
     }
+    return true;
 }

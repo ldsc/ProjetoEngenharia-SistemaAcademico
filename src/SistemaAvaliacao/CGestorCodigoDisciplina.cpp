@@ -1,14 +1,16 @@
 #include <iostream>
 //#include <sstream>
 #include <limits>
+#include <filesystem>
 #include "CGestorCodigoDisciplina.h"
 
 using namespace std;
+namespace fs = std::filesystem;
 
 // Variáveis estáticas, compartilhadas entre objetos.
- std::string CGestorCodigoDisciplina::caminhoDiretorio = "dados/TabelaCodigoDisciplina/";
+ std::filesystem::path CGestorCodigoDisciplina::caminhoDiretorio = "dados/TabelaCodigoDisciplina/";
 
- std::string CGestorCodigoDisciplina::nomeArquivo      = "mapSiglaCodigo-"; // padrão, sem o estado
+ std::filesystem::path CGestorCodigoDisciplina::nomeArquivo      = "mapSiglaCodigo-.dat"; // padrão, sem o estado
 
  std::map<const std::string,int> CGestorCodigoDisciplina::map_ultimoCodigoUsado;
 
@@ -102,16 +104,15 @@ void CGestorCodigoDisciplina::VisualizarTabelaDepartamentoUltimoCodigo()
 
 // Implementação dos métodos da classe CGestorCodigoDisciplina
 // Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-void CGestorCodigoDisciplina::RecuperarEstado(std::string identificadorEstado)
+bool CGestorCodigoDisciplina::RecuperarArquivo(std::filesystem::path caminhoCompleto)
 {
-    std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
-    std::ifstream arquivoSiglaCodigo (nomeCompleto);
+    std::ifstream arquivoSiglaCodigo (caminhoCompleto.string());
+    if(arquivoSiglaCodigo.fail()) {
+      cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para leitura... encerrando!\n";
+      return false;
+    }
     std::string sigla;
     int ultimoCodigoUsado;
-    if(arquivoSiglaCodigo.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << nomeCompleto << " para leitura... encerrando!\n";
-      //exit(0); melhorar tratamento erro...deveria repetir pedido estado ou pedir caminho completo para arquivo.
-    }
     map_ultimoCodigoUsado.clear(); // Apaga tudo pois vai recuperar do arquivo de disco.
     arquivoSiglaCodigo.ignore( std::numeric_limits<std::streamsize>::max(), '\n' ); // ignora linha comentário
     while (! arquivoSiglaCodigo.eof() ) {
@@ -120,21 +121,22 @@ void CGestorCodigoDisciplina::RecuperarEstado(std::string identificadorEstado)
       // map_ultimoCodigoUsado.insert ( make_pair ( sigla , ultimoCodigoUsado );
       // map_ultimoCodigoUsado.insert ( {sigla , ultimoCodigoUsado} );
     }
+    return true;
 }
 
 // Salva um estado específico. caminhoDiretorio + nomeArquivo + "-" + identificadorEstado
-void CGestorCodigoDisciplina::SalvarEstado(const std::string identificadorEstado) const
+bool CGestorCodigoDisciplina::SalvarArquivo(std::filesystem::path caminhoCompleto)  const
 {
-    std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
-    std::ofstream arquivoSiglaCodigo (nomeCompleto);
+    std::ofstream arquivoSiglaCodigo (caminhoCompleto);
     if(arquivoSiglaCodigo.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << nomeCompleto << " para escrita... encerrando!\n";
-      exit(0);
+      cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para escrita... encerrando!\n";
+      return false;
     }
     arquivoSiglaCodigo << "#SiglaDoDepartamento #PróximoCódigoVálido\n"; // cabeçalho.
     for( auto& [sigla,codigoNumerico]: map_ultimoCodigoUsado )
       arquivoSiglaCodigo << sigla << ' ' << codigoNumerico << '\n';
     arquivoSiglaCodigo.close(); // opcional, descarrega o buffer e fecha o arquivo.
+    return true;
 }
 
 

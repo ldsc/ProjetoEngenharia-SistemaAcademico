@@ -1,12 +1,13 @@
-#include <filesystem>
+
 #include "CGestorEmentaDisciplina.h"
 #include "CGestorCodigoDisciplina.h"
 
 namespace fs = std::filesystem;
 
 // Variáveis estáticas, compartilhadas entre objetos.
-std::string CGestorEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
-//std::string CGestorEmentaDisciplina::nomeArquivo      = "mapCodigoEmenta-"; // padrão, sem o estado
+std::filesystem::path CGestorEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
+
+std::filesystem::path CGestorEmentaDisciplina::nomeArquivo      {}; // padrão, sem o estado
 
 //std::map<CCodigoDisciplina,shared_ptr<CGestorEmentaDisciplina> > CGestorEmentaDisciplina::map_codigoDisciplina_spEmentaDisciplina;
 
@@ -101,17 +102,18 @@ std::cerr << "\nCGestorEmentaDisciplina::CarregarEmentaDisco()";
   ementa.reset();
 
   ListarEmentas();
-  std::cout << "\nInforme o nome do arquivo com a ementa (ex: rascunho/LEP-1523, aguardandoAprovacao/LEP-1523, ativa/LEP-1523 inativa/LEP-1523): ";
-  std::string nomeArquivo;
-  std::getline(std::cin, nomeArquivo); // LEP-1523-ano-versao LEP-1523-2023-1
+  std::cout << "\nInforme o nome do arquivo com a ementa (ex: rascunho/LEP-1523.dat, rascunho/LEP-1523-FundamentosC++.dat, aguardandoAprovacao/LEP-1523.dat, ativa/LEP-1523.dat, inativa/LEP-1523.dat): ";
+  std::string sNomeArquivo{};
+  std::getline(std::cin, sNomeArquivo);
   try {
-  // Cria ementa vazia
-  std::string sCodigoDisciplina = nomeArquivo.substr(nomeArquivo.size()-8,nomeArquivo.size());
-  ementa = std::make_shared<CEmentaDisciplina> (CGestorCodigoDisciplina::RetornarCodigoDisciplinaExistente(sCodigoDisciplina));
+  std::filesystem::path pathNomeArquivo = sNomeArquivo;
+   // Cria ementa vazia
+   std::string sCodigoDisciplina = pathNomeArquivo.stem().string().substr(0,8); // "LEP-1523".dat ou "LEP-1523-FundamentosC++".dat
+   ementa = std::make_shared<CEmentaDisciplina> (CGestorCodigoDisciplina::RetornarCodigoDisciplinaExistente(sCodigoDisciplina));
   // carrega do disco
-  std::cout << "\nVai recuperar do disco a disciplina " << ementa->CodigoDisciplina() << "\n";
-  ementa->RecuperarEstado(nomeArquivo);
-  ementaAtivaModificada = true;
+   std::cout << "\nVai recuperar do disco a disciplina " << ementa->CodigoDisciplina() << "\n";
+   ementa->RecuperarArquivo(CGestorEmentaDisciplina::caminhoDiretorio/ pathNomeArquivo);
+   ementaAtivaModificada = true;
   }
   catch(...) {
     std::cerr << "\nFalha no carregamento de ementa do disco!\n";
@@ -164,7 +166,7 @@ void CGestorEmentaDisciplina::SalvarEmenta(){
 }
 
 void CGestorEmentaDisciplina::VerificarSeEParaSalvar() {
-  if(ementa != nullptr) {
+  if(ementa != nullptr and ementaAtivaModificada ) {
     std::cout << "\nA ementa, código : " << ementa->CodigoDisciplina()
               << "\nfoi alterada, deseja salvar (s/n)? ";
     char resp = 'n';

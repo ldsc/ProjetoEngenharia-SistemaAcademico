@@ -1,13 +1,15 @@
 #include <iostream>
 //#include <sstream>
 #include <limits>
+#include <filesystem>
 #include "CTabelaCodigoDisciplina.h"
 
 using namespace std;
+namespace fs = std::filesystem;
 
 // Variáveis estáticas, compartilhadas entre objetos.
- std::string CTabelaCodigoDisciplina::caminhoDiretorio = "dados/TabelaCodigoDisciplina/";
- std::string CTabelaCodigoDisciplina::nomeArquivo      = "mapSiglaCodigo-"; // padrão, sem o estado
+ std::filesystem::path CTabelaCodigoDisciplina::caminhoDiretorio = "dados/TabelaCodigoDisciplina/";
+ std::filesystem::path CTabelaCodigoDisciplina::nomeArquivo      = "mapSiglaCodigo-.dat"; // padrão, sem o estado
 
  std::map<std::string,int> CTabelaCodigoDisciplina::map_ultimoCodigoUsado;
 
@@ -15,12 +17,15 @@ using namespace std;
 // Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
 void CTabelaCodigoDisciplina::RecuperarEstado(std::string identificadorEstado)
 {
-    std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
-    std::ifstream arquivoSiglaCodigo (nomeCompleto);
+    if(identificadorEstado.size() != 0)
+      //nomeArquivo = nomeArquivo.filename() + identificadorEstado);
+      nomeArquivo.replace_extension(identificadorEstado + nomeArquivo.extension());
+    std::filesystem::path caminhoCompleto = caminhoDiretorio / nomeArquivo ;
+    std::ifstream arquivoSiglaCodigo (caminhoCompleto);
     std::string sigla;
     int ultimoCodigoUsado;
     if(arquivoSiglaCodigo.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << nomeCompleto << " para leitura... encerrando!\n";
+      cerr << "\nNão conseguiu abrir o arquivo:" << ncaminhoCompleto << " para leitura... encerrando!\n";
       exit(0);
     }
     arquivoSiglaCodigo.ignore( std::numeric_limits<std::streamsize>::max(), '\n' ); // ignora linha comentário
@@ -35,10 +40,13 @@ void CTabelaCodigoDisciplina::RecuperarEstado(std::string identificadorEstado)
 // Salva um estado específico. caminhoDiretorio + nomeArquivo + "-" + identificadorEstado
 void CTabelaCodigoDisciplina::SalvarEstado(std::string identificadorEstado)
 {
-    std::string nomeCompleto = caminhoDiretorio + nomeArquivo + identificadorEstado + ".dat";
-    std::ofstream arquivoSiglaCodigo (nomeCompleto);
+    if(identificadorEstado.size() != 0)
+      //nomeArquivo = nomeArquivo.filename() + identificadorEstado);
+      nomeArquivo.replace_extension(identificadorEstado + nomeArquivo.extension());
+    std::filesystem::path caminhoCompleto = caminhoDiretorio / nomeArquivo ;
+    std::ofstream arquivoSiglaCodigo (caminhoCompleto);
     if(arquivoSiglaCodigo.fail()) {
-      cerr << "\nNão conseguiu abrir o arquivo:" << nomeCompleto << " para leitura... encerrando!\n";
+      cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para leitura... encerrando!\n";
       exit(0);
     }
     arquivoSiglaCodigo << "#SiglaDoDepartamento #PróximoCódigoVálido\n"; // cabeçalho.

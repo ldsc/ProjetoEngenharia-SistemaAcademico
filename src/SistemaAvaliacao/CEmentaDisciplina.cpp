@@ -4,11 +4,14 @@
 #include <iterator>
 #include <utility>
 #include <cctype>
+#include <filesystem>
 
 #include "ETipoAvaliacao.h"
 #include "CEmentaDisciplina.h"
 // #include "CGestorCodigoDisciplina.h"
 #include "CGestorEmentaDisciplina.h"
+
+namespace fs = std::filesystem;
 
 static std::string_view tracos {"===================================================="};
 // Variáveis estáticas, compartilhadas entre objetos.
@@ -152,7 +155,7 @@ void CEmentaDisciplina::DefinirEstado() {
 
 void CEmentaDisciplina::DefinirNomeDisciplina() {
   std::cout << tracos << "\nEntre com o nome da disciplina:"
-            << "\nNome atual (" << nome << ")";
+            << "\nNome atual (" << nome << "): ";
   std::getline(std::cin , nome);
   // ementaAtivaModificada = true;
 }
@@ -206,7 +209,7 @@ void CEmentaDisciplina::DefinirPreRequisito(/*CGestorCodigoDisciplina& gestorCod
   std::cout << "\nLista de códigos das disciplinas (conteúdo do diretório: "
             << CGestorEmentaDisciplina::caminhoDiretorio << ").";
   // usar filesystem para listar diretorio...
-  std::system((std::string("tree ") + CGestorEmentaDisciplina::caminhoDiretorio).c_str());
+  std::system((std::string("tree ") + CGestorEmentaDisciplina::caminhoDiretorio.string()).c_str());
   std::string sCodigoDisciplinaPreRequisito;
   do {
     std::cout << "\nEntre com o código da disciplina pré-requisito (digite 'q' para encerrar a entrada): ";
@@ -284,7 +287,7 @@ void CEmentaDisciplina::DefinirConteudoProgramatico(){
 }
 
 void CEmentaDisciplina::DefinirAssunto(){
- std::cout << "\nLista dos assuntos atuais =";
+ std::cout << tracos << "\nLista dos assuntos atuais =\n";
   for(auto& [sAssunto,sCargaHoraria]: vAssunto_CargaHoraria)
     std::cout << "Assunto: " << sAssunto << "\nCarga horária: " << sCargaHoraria << '\n';
   // vai solicitar os assuntos e cargas horárias
@@ -337,7 +340,7 @@ void CEmentaDisciplina::DefinirVersao() {
    //   continue;
    std::cout << "\nEntre com o semestre da ementa (1,2,3 - verão):\n";
    std::cin >> semestre; std::cin.get();
-   if(semestre < 1 or semestre > 3)
+   if(semestre < 1 or semestre > 3) // or ano > anoCorrente
      entradaOk = false;
   } while(! entradaOk); //
    versao = {ano,semestre}; // Versão da ementa <Ano,Semestre>
@@ -438,49 +441,35 @@ std::ostream& operator<<(std::ostream& arquivo, const CEmentaDisciplina& ementa)
 }
 
 // Cria arquivo com a ementa:
-// Uma ementa pode estar sendo feita (rascunho), já foi finalizada mas ainda não foi aprovada, já foi aprovada(ativa), foi desativada.
-// dados/EmentaDisciplina
-// dados/EmentaDisciplina/rascunho/LEP-1523#r
-// dados/EmentaDisciplina/aguardandoAprovacao/LEP-1523#f
-// dados/EmentaDisciplina/ativa/LEP-1523#a
-// dados/EmentaDisciplina/desativa/LEP-1523#d#ano-semestre
-void CEmentaDisciplina::SalvarEstado(const std::string identificadorEstado ) const
+// Uma ementa pode estar no estado sendo feita (rascunho), já foi finalizada mas ainda não foi aprovada, já foi aprovada(ativa), foi desativada. O estado define o diretório onde será armazenada.
+// dados/EmentaDisciplina/desativa/LEP-1523-ano-semestre-nome.dat
+// O nome considera o código, a versão e o nome. A extensão é .dat
+// Função herdada de CEstadoPersistente. Aqui usamos o EEstadoEmentaDisciplina para definir o diretório onde será armazenada.
+// Note que vai de rascunho para aguardando, depois ativa e então desativa.
+bool  CEmentaDisciplina::SalvarArquivo(std::filesystem::path caminhoCompleto)  const
 {
-    std::string sVersao = std::to_string(versao.first) +"-"+ std::to_string(versao.second);
-    std::string subDiretorio;
-    if( estado == EEstadoEmentaDisciplina::rascunho)
-      subDiretorio = "rascunho/";
-    else if( estado == EEstadoEmentaDisciplina::aguardandoAprovacao)
-      subDiretorio = "aguardandoAprovacao/";
-    else if( estado == EEstadoEmentaDisciplina::ativa)
-      subDiretorio = "ativa/";
-    else if( estado == EEstadoEmentaDisciplina::desativa)
-      subDiretorio = "desativa/";
-
-    //std::string caminhoCompleto = CGestorEmentaDisciplina::caminhoDiretorio + subDiretorio + codigoDisciplina.CodigoDisciplina() ;
-    std::string caminhoCompleto = CGestorEmentaDisciplina::caminhoDiretorio + subDiretorio + codigoDisciplina ;
-    if(estado == EEstadoEmentaDisciplina::desativa)
-      caminhoCompleto += "#" + sVersao;
-    std::ofstream arquivoEmenta (caminhoCompleto + ".dat");
+    std::ofstream arquivoEmenta (caminhoCompleto);
     if(arquivoEmenta.fail()) {
       std::cerr << "\nNão conseguiu abrir o arquivo:" << caminhoCompleto << " para escrita... !\n";
-      return;//exit(0);
+      return false;//exit(0);
     }
     arquivoEmenta << *this;
     arquivoEmenta.close();
+    return true;
 }
 
-// Precisa receber o nome do arquivo na variável identificadorEstado
-// note que não entra a extensão .dat.
-// Após leitura de linha com int, precisa ignorar o resto da linha se for usar getline.
+// Precisa receber o caminho relativo para o arquivo na variável identificadorEstado
+// ex: se a disciplina esta em: dados/EmentaDisciplina/desativa/LEP-1523-ano-semestre-nome.dat
+// o caminhoDiretorio é dado por dados/EmentaDisciplina/ e precisa receber desativa/LEP-1523-ano-semestre-nome.dat
+// PS: Após leitura de linha com int, precisa ignorar o resto da linha se for usar getline.
 // ex: 5'\n' requer ementa >>size; ementa.ignore(max_size,'\n');
-void CEmentaDisciplina::RecuperarEstado(const std::string identificadorEstado)
-{
-    constexpr auto max_size = std::numeric_limits<std::streamsize>::max();
-    std::string caminhoCompleto = CGestorEmentaDisciplina::caminhoDiretorio + identificadorEstado + ".dat";
-    std::ifstream ementa (caminhoCompleto);
+bool CEmentaDisciplina::RecuperarArquivo(std::filesystem::path caminhoCompleto)  {
+    std::ifstream ementa (caminhoCompleto.string());
     if(ementa.fail()) {
+      std::cerr << "\nNão conseguiu abrir o arquivo: " << caminhoCompleto;
+      return false;
     }
+    constexpr auto max_size = std::numeric_limits<std::streamsize>::max();
     std::string linha;
     size_t size{};
     ementa.ignore(max_size,'\n'); // ignora #EmentaDisciplina: LEP-0049
@@ -548,28 +537,38 @@ void CEmentaDisciplina::RecuperarEstado(const std::string identificadorEstado)
     int semestre;
     ementa >> semestre;
     versao = {ano,semestre};
+    return true;
 }
 
-// std::ostream& operator<< (std::ostream& arquivo,std::pair<std::string,int> p) {
-//    arquivo << p.first << '\n' << p.second;
-//    return arquivo;
-// }
-
-void CEmentaDisciplina::CaminhoDiretorio(const std::string _caminhoDiretorio) {
+void CEmentaDisciplina::CaminhoDiretorio(const std::filesystem::path& _caminhoDiretorio) {
  CGestorEmentaDisciplina::caminhoDiretorio =  _caminhoDiretorio;
 }
 
-const std::string  CEmentaDisciplina::CaminhoDiretorio() const {
+const std::filesystem::path&  CEmentaDisciplina::CaminhoDiretorio() const {
   return CGestorEmentaDisciplina::caminhoDiretorio;
 }
 
-void CEmentaDisciplina::NomeArquivo(const std::string _nomeArquivo) {
+void CEmentaDisciplina::NomeArquivo(const std::filesystem::path& _nomeArquivo) {
  // não faz nada
+  std::cerr << "\nChamada a CEmentaDisciplina::NomeArquivo não faz sentido, o nome é definido a partir de atributos.\n";
 }
 
-const std::string  CEmentaDisciplina::NomeArquivo() const  {
- // não faz nada
-  return "nãoTemNome";
+// usou referencia para ser mais rápido, como e const não consegue alterar.
+// warning: reference to local variable ‘nomeArquivo’ returned [-Wreturn-local-addr]
+const std::filesystem::path&  CEmentaDisciplina::NomeArquivo() const  {
+    std::string sNomeArquivo;
+    if( estado == EEstadoEmentaDisciplina::rascunho)
+      sNomeArquivo = "rascunho/";
+    else if( estado == EEstadoEmentaDisciplina::aguardandoAprovacao)
+      sNomeArquivo = "aguardandoAprovacao/";
+    else if( estado == EEstadoEmentaDisciplina::ativa)
+      sNomeArquivo = "ativa/";
+    else if( estado == EEstadoEmentaDisciplina::desativa)
+      sNomeArquivo = "desativa/";
+
+    std::string ano_semestre = std::to_string(versao.first) +"-"+ std::to_string(versao.second);
+
+    sNomeArquivo +=  codigoDisciplina +"-"+ ano_semestre + "-" + nome + ".dat" ;
+    CGestorEmentaDisciplina::nomeArquivo = sNomeArquivo;
+  return CGestorEmentaDisciplina::nomeArquivo;
 }
-
-

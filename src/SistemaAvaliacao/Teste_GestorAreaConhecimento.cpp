@@ -12,17 +12,16 @@ using namespace std;
 // ao mesmo tempo, gerenciar o arquivo que tem a lista de departamentos e códigos usados.
 int main() {
   CGestorAreaConhecimento geradorAreaConhecimento;
-  std::cout << "\nVisualizando a tabela codigo<->areaDoConhecimento estado atual:\n";
+  std::cout << "\nVisualizando a tabela codigo<->areaDoConhecimento estado atual:\n"
+            << "\nNomeArquivo = " << CGestorAreaConhecimento::nomeArquivo << '\n';
   geradorAreaConhecimento.VisualizarTabelaAreaConhecimento();
-  std::cout << "\nSalvando a tabela no estado 1:\n";
-  geradorAreaConhecimento.SalvarEstado("1");
 
   std::vector<CCodigoAreaConhecimento> vCodigo;
-  char resp{'1'};
-  while(resp == '1') {
+  char resp{'c'};
+  while(resp == 'c') {
     vCodigo.push_back(geradorAreaConhecimento.DefinirAreaConhecimento());
     cout << "\nAdicionou no vetor o codigo : " << vCodigo.back().CodigoDescricao();
-    cout << "\nContinuar (1) ou parar (0):";
+    cout << "\nContinuar (c) ou parar (q):";
     cin.get(resp); cin.get();
   }
 
@@ -30,11 +29,23 @@ int main() {
   cout << "\nTabela de Áreas do Conhecimento\n";
   std::for_each(vCodigo.begin(), vCodigo.end(),
                 [](CCodigoAreaConhecimento& codigo){ cout << codigo.CodigoDescricao() << '\n';});
-  cout << "\nPressione enter para continuar. \nVai visualizar tabela de engenharia de petróleo:";
+  cout << "\nPressione enter para continuar.";
   cin.get();
 
-  geradorAreaConhecimento.RecuperarEstado("EngenhariaPetroleo");
-  cout << "\nVisualizando a tabela de áreas de conhecimentos associadas ao curso de engenharia de petróleo\n";
+  std::string identificadorEstado = "-1";
+  if(geradorAreaConhecimento.SalvarEstado(identificadorEstado))
+   std::cout << "\nSalvou a tabela no estado -1, procure por arquivo [" << CGestorAreaConhecimento::nomeArquivo.string() << "]\n";
+
+  geradorAreaConhecimento.RecuperarEstado("","TabeladeAreasdoConhecimento-Assuntos-Computacao.dat");
+  std::cout << "\nVisualizando a tabela codigo<->areaDoConhecimento estado atual:\n"
+            << "\nNomeArquivo = " << CGestorAreaConhecimento::nomeArquivo << '\n';
+  geradorAreaConhecimento.VisualizarTabelaAreaConhecimento();
+
+  cin.get();
+  std::filesystem::path arquivo_engenharia { "TabeladeAreasdoConhecimento-Assuntos-EngenhariaPetroleo.dat"};
+  geradorAreaConhecimento.RecuperarDiretorioArquivo(CGestorAreaConhecimento::caminhoDiretorio,arquivo_engenharia);
+  std::cout << "\nVisualizando a tabela codigo<->areaDoConhecimento estado atual (engenharia?):\n"
+            << "\nNomeArquivo = " << CGestorAreaConhecimento::nomeArquivo << '\n';
   geradorAreaConhecimento.VisualizarTabelaAreaConhecimento();
 return 0;
 }

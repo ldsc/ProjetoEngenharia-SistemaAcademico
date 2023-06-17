@@ -9,25 +9,26 @@ using namespace std;
 // A classe CCodigoDisciplina tem o objetivo de armazenar o código da disciplina e,
 // ao mesmo tempo, gerenciar o arquivo que tem a lista de departamentos e códigos usados.
 int main() {
-  CGestorCodigoDisciplina geradorCodigoDisciplina;
+  CGestorCodigoDisciplina gestorCodigoDisciplina;
   // std::cout << "\nVisualizando a tabela siglaDepartamento<->codigoUsado estado atual:\n";
-  // geradorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
+  // gestorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
   std::string sSiglaDepartamento;
   //std::string sCodigoDisciplina;
   //CCodigoDisciplina sCodigoDisciplina;
-  cout << "\nVai repetir 10x..";
-  for(int i=0; i<10; i++) {
-    CCodigoDisciplina CodigoDisciplina = geradorCodigoDisciplina.CriarCodigoDisciplina();
+  cout << "\nVai repetir 5x..";
+  for(int i=0; i<5; i++) {
+    CCodigoDisciplina CodigoDisciplina = gestorCodigoDisciplina.CriarCodigoDisciplina();
     cout << "\nCódigo gerado = " << CodigoDisciplina << '\n';
-    geradorCodigoDisciplina.SalvarEstado(std::to_string(i));
+
+    gestorCodigoDisciplina.SalvarEstado(std::to_string(i));
   }
   std::cout << "\nVisualizando a tabela siglaDepartamento<->codigoUsado estado atual:\n";
-  geradorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
+  gestorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
   std::cout << "\nEntre com a sigla do novo departamento: ";
   std::getline(cin, sSiglaDepartamento);
-  geradorCodigoDisciplina.AdicionarDepartamento(sSiglaDepartamento);
+  gestorCodigoDisciplina.AdicionarDepartamento(sSiglaDepartamento);
   std::cout << "\nVisualizando a tabela siglaDepartamento<->codigoUsado estado atual:\n";
-  geradorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
+  gestorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
   std::cout << "\nLista arquivos no diretório dados/TabelaCodigoDisciplina/:\n";
   system("ls dados/TabelaCodigoDisciplina/");
   std::cout << "\nEntre com o identificador da tabela a ser recuperada\n"
@@ -35,7 +36,7 @@ int main() {
                "o número 3 é o identificador do estado a ser recuperado):";
   std::string identificadorEstado;
   std::getline(cin, identificadorEstado);
-  geradorCodigoDisciplina.RecuperarEstado(identificadorEstado);
-  geradorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
+  gestorCodigoDisciplina.RecuperarEstado(identificadorEstado);
+  gestorCodigoDisciplina.VisualizarTabelaDepartamentoUltimoCodigo();
 return 0;
 }

@@ -7,6 +7,7 @@
 #include <map>
 #include <algorithm>
 #include <memory>
+#include <filesystem>
 #include "CEstadoPersistente.h"
 // #include "CCodigoDisciplina.h"
 // #include "CGestorCodigoDisciplina.h"
@@ -20,8 +21,9 @@ class CGestorEmentaDisciplina
 public:
   // Gestão da lista de disciplinas localizadas em dados/EmentaDisciplina/
   /// Caminho para diretório onde os dados serão armazenados.
-  static std::string caminhoDiretorio;
+  static std::filesystem::path caminhoDiretorio;
 
+  static std::filesystem::path nomeArquivo;
   /// Map com código da disciplina e path para ementas.
   //static std::map<CCodigoDisciplina,std::filesystem::path > map_codigoDisciplina_path;
 

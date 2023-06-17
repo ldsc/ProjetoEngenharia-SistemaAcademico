@@ -14,16 +14,20 @@ O código tem diferentes níveis:
 A descrição é um texto curto, mas bem abrangente (pode estar presente em mais de uma disciplina).
 Note que Matemática esta dentro de Ciências Exatas e da Terra. Álgebra esta dentro de matemática. Conjunto esta dentro de Álgebra. Posso ter algo como bool AreaConhecimento.Inclui(AreaConhecimento);
 
+#CGestorAreaConhecimento
+Classe que acessa as areas de conhecimento e cria objetos do tipo CAreaConhecimento.
+
 %Disciplinas
 #CCodigoDisciplina
-É o código único da disciplina (variações de versão indicadas por Ano-Semestre).
+É o código único da disciplina (padrão ccc-nnnn).
+Note que criou uma classe para isso, pense em simplificar e deixar como uma const std::string codigoDisciplina {"xxx-nnnn"};
 
 #CGestorCodigoDisciplina
 Classe que gerencia os códigos das disciplinas. Necessário para evitar duplicações.
 
 #CEmentaDisciplina
 É a ementa da disciplina com todas as informações associadas.
-A ementa deve ter uma lista com as CAreaConhecimento. A ideia é que o curso tenha uma lista com as CAreaConhecimento e que as disciplinas tenham cada uma sua lista; A soma das listas das áreas de conhecimento das disciplinas devem atender o que esta previsto para o curso.
+A ementa deve ter uma lista com as CAreaConhecimento do CNPq. A ideia é que o curso tenha uma lista com as CAreaConhecimento e que as disciplinas tenham cada uma sua lista; A soma das listas das áreas de conhecimento das disciplinas devem atender o que esta previsto para o curso.
 A ementa deve ter um conteúdoProgramático que é uma descrição curta da disciplina;
 A ementa deve ter uma lista de assuntos a serem vistos, preenchido pelo professor que elabora a ementa.
 Para cada assunto teremos uma carga horária associada.

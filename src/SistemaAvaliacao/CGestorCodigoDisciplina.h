@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <filesystem>
 #include <map>
 #include "CEstadoPersistente.h"
 #include "CCodigoDisciplina.h"
@@ -28,9 +29,9 @@ class CGestorCodigoDisciplina: public CEstadoPersistente
 {
 public:
   /// Caminho para diretório onde os dados serão armazenados.
-  static std::string caminhoDiretorio;
+  static std::filesystem::path caminhoDiretorio;
   /// Nome do arquivo onde os dados serão armazenados.
-  static std::string nomeArquivo;
+  static std::filesystem::path nomeArquivo;
   /// Map com as siglas dos laboratórios e código disponibilizado. O código vai crescendo de 0001 até 9999.
   static std::map<const std::string,int> map_ultimoCodigoUsado;
 
@@ -75,16 +76,26 @@ public:
   // Implementa Métodos da classe persistente
 public:
   /// Seta caminho para o diretório com os arquivos siglaDepartamento - código usado.
-  virtual void CaminhoDiretorio(const std::string _caminhoDiretorio)  { caminhoDiretorio = _caminhoDiretorio; };
+  virtual void CaminhoDiretorio(const std::filesystem::path& _caminhoDiretorio)
+  { caminhoDiretorio = _caminhoDiretorio; };
   /// Retorna caminho para o diretório com os arquivos siglaDepartamento - código usado.
-  virtual const std::string  CaminhoDiretorio()  const                      { return caminhoDiretorio; };
+  virtual const std::filesystem::path& CaminhoDiretorio()  const
+  { return caminhoDiretorio; };
   /// Seta nome arquivo com a base de dados.
-  virtual void NomeArquivo(const std::string _nomeArquivo)            { nomeArquivo = _nomeArquivo; };
+  virtual void NomeArquivo(const std::filesystem::path& _nomeArquivo)
+  { nomeArquivo = _nomeArquivo; };
   /// Retorna nome arquivo com a base de dados.
-  virtual const std::string  NomeArquivo()    const                         { return nomeArquivo; }
-  /// Salva um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  virtual void SalvarEstado(const std::string identificadorEstado = {}) const;
-  /// Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  virtual void RecuperarEstado(std::string identificadorEstado = {});
+  virtual const std::filesystem::path& NomeArquivo()  const
+  { return nomeArquivo; }
+
+protected:
+  /// Salva um estado específico.
+  // ex: se path = dados/TabelaCodigoDisciplina-.dat
+  // salva no arquivo dados/TabelaCodigoDisciplina-identificadorEstado.dat
+  /// Salva estado do objeto ou dados associados no arquivo. .
+  virtual bool RecuperarArquivo(std::filesystem::path caminhoCompleto) override;
+  /// Salva estado do objeto ou dados associados no arquivo.
+  virtual bool SalvarArquivo(std::filesystem::path caminhoCompleto)  const override;
+
 };
 #endif // CGestorCodigoDisciplina_H

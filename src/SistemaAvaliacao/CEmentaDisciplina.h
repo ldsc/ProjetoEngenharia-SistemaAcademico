@@ -18,16 +18,16 @@
 
 // Uma ementa pode estar sendo feita (rascunho), já foi finalizada mas ainda não foi aprovada, já foi aprovada(ativa), foi desativada.
 // dados/EmentaDisciplina
-// dados/EmentaDisciplina/rascunho/LEP-1523#r
-// dados/EmentaDisciplina/aguardandoAprovacao/LEP-1523#f
-// dados/EmentaDisciplina/ativa/LEP-1523#a
-// dados/EmentaDisciplina/desativa/LEP-1523#d#ano-semestre
+// dados/EmentaDisciplina/rascunho/LEP-1523.dat
+// dados/EmentaDisciplina/aguardandoAprovacao/LEP-1523.dat
+// dados/EmentaDisciplina/ativa/LEP-1523.dat
+// dados/EmentaDisciplina/desativa/LEP-1523-ano-semestre.dat
 
 enum class EEstadoEmentaDisciplina : int { rascunho = 1, aguardandoAprovacao, ativa, desativa};
 
 
 /// A ementa da disciplina contém um conjunto extenso de informações relacionados a disciplina.
-/// Ela mesmo se salva em disco.
+/// Ela mesmo se salva em disco com um nome de arquivo que considera o estado, código, versao, nome.
 class CEmentaDisciplina: public CEstadoPersistente
 {
 private:
@@ -184,25 +184,16 @@ private:
   friend std::ofstream& operator<<(std::ofstream& os, const CEmentaDisciplina& ementa);
   friend std::ostream&  operator<<(std::ostream& os, const CEmentaDisciplina& ementa);
 
-  // Do estado CEstadoPersistente
-  /// Salva um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  // O identificadorEstado é dado por Ano-Semestre
-  virtual void SalvarEstado(const std::string identificadorEstado = {}) const;
-  /// Recupera um estado específico. caminhoDiretorio + nomeArquivo + identificadorEstado
-  // O identificadorEstado é dado por Ano-Semestre
-  virtual void RecuperarEstado(const std::string identificadorEstado = {});
+  // ----------- Do estado CEstadoPersistente .h
+  virtual void CaminhoDiretorio(const std::filesystem::path& _caminhoDiretorio) override;
+  virtual const std::filesystem::path&  CaminhoDiretorio() const override;
+  virtual void NomeArquivo(const std::filesystem::path& _nomeArquivo)  override;
+  virtual const std::filesystem::path& NomeArquivo() const   override;
 
-  virtual void CaminhoDiretorio(const std::string _caminhoDiretorio);
-  virtual const std::string  CaminhoDiretorio() const;
-  virtual void NomeArquivo(const std::string _nomeArquivo) ;
-  virtual const std::string  NomeArquivo() const  ;
+protected:
+  /// Salva estado do objeto ou dados associados no arquivo com a path completa.
+  virtual bool SalvarArquivo(std::filesystem::path caminhoCompleto) const override;
+  /// Salva estado do objeto ou dados associados no arquivo com a path completa.
+  virtual bool RecuperarArquivo(std::filesystem::path caminhoCompleto) override;
 };
 #endif // CEmentaDisciplina_H
-
-
-  // virtual void CaminhoDiretorio(const std::string _caminhoDiretorio) = 0 ;
-  // virtual const std::string  CaminhoDiretorio() const                      = 0 ;
-  // virtual void NomeArquivo(const std::string _nomeArquivo)           = 0 ;
-  // virtual const std::string  NomeArquivo() const                           = 0 ;
-  // virtual void SalvarEstado(const std::string identificadorEstado = {} ) const   = 0 ;
-  // virtual void RecuperarEstado(const std::string identificadorEstado = {} ) = 0 ;
