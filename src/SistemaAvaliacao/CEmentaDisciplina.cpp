@@ -14,9 +14,12 @@
 namespace fs = std::filesystem;
 
 static std::string_view tracos {"===================================================="};
+
 // Variáveis estáticas, compartilhadas entre objetos.
-//std::string CEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
-//std::string CEmentaDisciplina::nomeArquivo      = "mapCodigoEmenta-"; // padrão, sem o estado
+std::filesystem::path CEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
+
+std::filesystem::path CEmentaDisciplina::nomeArquivo      {};
+
 
 // std::map<CCodigoDisciplina,shared_ptr<CEmentaDisciplina> > CEmentaDisciplina::map_codigoDisciplina_spEmentaDisciplina;
 
@@ -207,9 +210,9 @@ void CEmentaDisciplina::DefinirPreRequisito(/*CGestorCodigoDisciplina& gestorCod
   // Precisamos da lista de disciplinas... Código e nome
   // Ex: LEP-0001 Fundamentos de Computação
   std::cout << "\nLista de códigos das disciplinas (conteúdo do diretório: "
-            << CGestorEmentaDisciplina::caminhoDiretorio << ").";
+            << CEmentaDisciplina::caminhoDiretorio << ").";
   // usar filesystem para listar diretorio...
-  std::system((std::string("tree ") + CGestorEmentaDisciplina::caminhoDiretorio.string()).c_str());
+  std::system((std::string("tree ") + CEmentaDisciplina::caminhoDiretorio.string()).c_str());
   std::string sCodigoDisciplinaPreRequisito;
   do {
     std::cout << "\nEntre com o código da disciplina pré-requisito (digite 'q' para encerrar a entrada): ";
@@ -541,16 +544,17 @@ bool CEmentaDisciplina::RecuperarArquivo(std::filesystem::path caminhoCompleto) 
 }
 
 void CEmentaDisciplina::CaminhoDiretorio(const std::filesystem::path& _caminhoDiretorio) {
- CGestorEmentaDisciplina::caminhoDiretorio =  _caminhoDiretorio;
+ CEmentaDisciplina::caminhoDiretorio =  _caminhoDiretorio;
 }
 
 const std::filesystem::path&  CEmentaDisciplina::CaminhoDiretorio() const {
-  return CGestorEmentaDisciplina::caminhoDiretorio;
+  return CEmentaDisciplina::caminhoDiretorio;
 }
 
 void CEmentaDisciplina::NomeArquivo(const std::filesystem::path& _nomeArquivo) {
  // não faz nada
-  std::cerr << "\nChamada a CEmentaDisciplina::NomeArquivo não faz sentido, o nome é definido a partir de atributos.\n";
+  std::cerr << "\nChamada a CEmentaDisciplina::NomeArquivo(novoNome) não faz sentido, o nome é definido a partir de atributos.\n";
+  CEmentaDisciplina::nomeArquivo = _nomeArquivo;
 }
 
 // usou referencia para ser mais rápido, como e const não consegue alterar.
@@ -569,6 +573,6 @@ const std::filesystem::path&  CEmentaDisciplina::NomeArquivo() const  {
     std::string ano_semestre = std::to_string(versao.first) +"-"+ std::to_string(versao.second);
 
     sNomeArquivo +=  codigoDisciplina +"-"+ ano_semestre + "-" + nome + ".dat" ;
-    CGestorEmentaDisciplina::nomeArquivo = sNomeArquivo;
-  return CGestorEmentaDisciplina::nomeArquivo;
+    CEmentaDisciplina::nomeArquivo = sNomeArquivo;
+  return CEmentaDisciplina::nomeArquivo;
 }

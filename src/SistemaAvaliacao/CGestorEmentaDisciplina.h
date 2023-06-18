@@ -19,11 +19,12 @@ class CGestorEmentaDisciplina
   bool ementaAtivaModificada = false;
 
 public:
+  // Nota: o caminhoDiretorio e nomeArquivo estão em CEmentaDisciplina
   // Gestão da lista de disciplinas localizadas em dados/EmentaDisciplina/
   /// Caminho para diretório onde os dados serão armazenados.
-  static std::filesystem::path caminhoDiretorio;
-
-  static std::filesystem::path nomeArquivo;
+  // static std::filesystem::path caminhoDiretorio;
+  //
+  // static std::filesystem::path nomeArquivo;
   /// Map com código da disciplina e path para ementas.
   //static std::map<CCodigoDisciplina,std::filesystem::path > map_codigoDisciplina_path;
 

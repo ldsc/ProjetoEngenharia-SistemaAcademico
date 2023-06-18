@@ -5,9 +5,9 @@
 namespace fs = std::filesystem;
 
 // Variáveis estáticas, compartilhadas entre objetos.
-std::filesystem::path CGestorEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
-
-std::filesystem::path CGestorEmentaDisciplina::nomeArquivo      {}; // padrão, sem o estado
+// std::filesystem::path CGestorEmentaDisciplina::caminhoDiretorio = "dados/EmentaDisciplina/";
+//
+// std::filesystem::path CGestorEmentaDisciplina::nomeArquivo      {};
 
 //std::map<CCodigoDisciplina,shared_ptr<CGestorEmentaDisciplina> > CGestorEmentaDisciplina::map_codigoDisciplina_spEmentaDisciplina;
 
@@ -112,7 +112,7 @@ std::cerr << "\nCGestorEmentaDisciplina::CarregarEmentaDisco()";
    ementa = std::make_shared<CEmentaDisciplina> (CGestorCodigoDisciplina::RetornarCodigoDisciplinaExistente(sCodigoDisciplina));
   // carrega do disco
    std::cout << "\nVai recuperar do disco a disciplina " << ementa->CodigoDisciplina() << "\n";
-   ementa->RecuperarArquivo(CGestorEmentaDisciplina::caminhoDiretorio/ pathNomeArquivo);
+   ementa->RecuperarArquivo(CEmentaDisciplina::caminhoDiretorio/ pathNomeArquivo);
    ementaAtivaModificada = true;
   }
   catch(...) {
@@ -148,8 +148,8 @@ void CGestorEmentaDisciplina::DesativarEmenta() {
 // Listar os diretórios
 void CGestorEmentaDisciplina::ListarEmentas() {
 // listar o diretorio
- std::cout << "\nConteúdo do diretório " << caminhoDiretorio;
- for (auto const& dir_entry : std::filesystem::recursive_directory_iterator{caminhoDiretorio})
+ std::cout << "\nConteúdo do diretório " << CEmentaDisciplina::caminhoDiretorio;
+ for (auto const& dir_entry : std::filesystem::recursive_directory_iterator{CEmentaDisciplina::caminhoDiretorio})
     {
         std::cout << '\n' << dir_entry ;
     }

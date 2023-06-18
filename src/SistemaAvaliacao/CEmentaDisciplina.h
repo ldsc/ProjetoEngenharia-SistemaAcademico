@@ -49,10 +49,10 @@ private:
 
 public:
   // Gestão da lista de disciplinas localizadas em dados/EmentaDisciplina/
-  /// Caminho para diretório onde os dados serão armazenados.
-  //static std::string caminhoDiretorio;
-  /// Map com código da disciplina e shared_ptr para ementas. CEmentaDisciplina::mCodigoEmenta.
-  //ps: O valor poderia apontar para uma path...
+  static std::filesystem::path caminhoDiretorio;
+
+  static std::filesystem::path nomeArquivo;
+
   // static std::map<CCodigoDisciplina,shared_ptr<CEmentaDisciplina> > map_codigoDisciplina_spEmentaDisciplina;
 
 private:
