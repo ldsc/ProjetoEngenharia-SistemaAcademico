@@ -1,0 +1,36 @@
+
+
+Organização do diretório:
+====================
+O presente diretório tem 3 sub-diretórios:
+
+imagens: 
+	Neste diretório você deve colocar todas as imagens a serem utilizadas e referenciadas em seu trabalho.
+   
+listagens  
+	Neste diretório você deve colocar todas as listagens de código,
+	arquivo .h .cpp
+
+listagens/html
+	Após documentar o código usando formato javadoc, você irá usar o programa doxygen para gerar 
+	automaticamente a documentação. 
+	O doxygen irá criar um subdiretório chamado html, nele você encontrará um arquivo index.html 
+	que deve ser aberto usando um navegador (como o Chrome ou Firefox).
+
+lyx  
+	Neste diretório você vai encontrar arquivos do editor de texto científico LyX.
+
+
+
+Nota:
+=====
+
+O lyx esta disponibilizado em http://www.lyx.org.
+Baixe a versão mais recente.
+Instale.
+Leia o tutorial.
+Se tiver dúvidas procure seus colegas, vários já sabem usar o lyx.
+Se continuar com dúvidas procure o monitor.
+Se continuar com dúvidas me procure.
+	
+

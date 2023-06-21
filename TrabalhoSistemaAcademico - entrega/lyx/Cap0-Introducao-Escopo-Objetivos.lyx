@@ -1,0 +1,590 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Capa
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
+\begin_inset Newline newline
+\end_inset
+
+LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+O título deve ser o mais claro possível, não deixando dúvidas sobre o assunto
+ em questão.
+ O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+PROJETO DE ENGENHARIA SISTEMA ACADÊMICO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+ÁLLIDA RIBEIRO SILVEIRA FAIAL – 2023 – V1 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+JOÃO VITOR QUEIROZ PARDO – 2023 – V1 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+KAROLINY CARVALHO ELIAS - 2023 – V1 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+MATHEUS BASTOS - 2023 – V1 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+NATHAN RANGEL MAGALHÃES - 2023 – V1 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+RAFAEL MOREIRA DA SILVA - 2023 – V1 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+THAUAN FERREIRA BARBOSA - 2023 – V1
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+MACAÉ - RJ
+\begin_inset Newline newline
+\end_inset
+
+JUNHO - 2023
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introdução
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Introdução"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter 
+\backslash
+;- Introdução} 
+\backslash
+rhead{
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A proposta do trabalho é desenvolver um software que se propõe a ser um
+ sistema acadêmico, uma ferramenta que será essencial para dirigentes, alunos
+ e professores.
+ A importância desse programa está na sua capacidade de integrar diversos
+ processos acadêmicos em um só lugar, possibilitando um gerenciamento eficiente
+ de informações, recursos e atividades.
+ 
+\end_layout
+
+\begin_layout Standard
+O sistema acadêmico permitirá que os usuários tenham acesso a informações
+ diversas, como notas, frequência, calendário acadêmico, horários de aula,
+ conteúdo programático, abertura de requerimento, consulta do requerimento,
+ trancamento de matrícula, solicitação de extrato acadêmico, declaração
+ de matrícula, entre outros.
+ Além de oferecer funcionalidades como se matricular em turmas e solicitar
+ documentos, o software será criado com base nas necessidades dos usuários,
+ levando em consideração as particularidades da Universidade Estadual do
+ Norte Fluminense Darcy Ribeiro, a fim de oferecer uma solução personalizada
+ e eficaz.
+ Com o sistema acadêmico integrado, alunos e professores terão acesso a
+ uma plataforma unificada que permitirá o gerenciamento eficiente das atividades
+ acadêmicas e administrativas do curso.
+ Dessa forma, o projeto de gestão acadêmica será mais organizado e eficiente,
+ possibilitando a todos os envolvidos uma experiência mais enriquecedora
+ e produtiva.
+\end_layout
+
+\begin_layout Section
+Escopo do Problema
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Escopo-do-Problema"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O sistema acadêmico atual da Universidade Estadual do Norte Fluminense Darcy
+ Ribeiro não é executado de forma funcional e produtiva a fim de atender
+ as demandas dos alunos e professores.
+ O sistema é fragmentado em diferentes plataformas e exige um grande esforço
+ dos usuários para acessar informações e realizar tarefas.
+ Essa falta de eficiência pode resultar em diversos problemas, como dificuldades
+ na matrícula em disciplinas, demora na disponibilização de notas e documentos,
+ falta de comunicação entre professores e alunos, entre outros.
+ Tendo em vista esses problemas, a criação de um novo sistema surge como
+ uma solução para atender às necessidades dos usuários, oferecendo uma plataform
+a integrada, intuitiva e personalizada para gestão acadêmica.
+ Com um escopo bem definido, podemos garantir que nosso sistema acadêmico
+ irá resolver as principais dificuldades enfrentadas pelos usuários, otimizando
+ o gerenciamento de informações e recursos.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Apresentar de forma eficiente informações como: notas, frequência, calendário
+ acadêmico, normas da graduação, horários de aula e acesso à ementa.
+ 
+\end_layout
+
+\begin_layout Itemize
+Oferecer funcionalidades como solicitação de documentos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Gerenciar atividades acadêmicas de forma eficiente, otimizando recursos
+ e informações.
+ 
+\end_layout
+
+\begin_layout Itemize
+Integrar diferentes processos acadêmicos em uma única plataforma.
+ 
+\end_layout
+
+\begin_layout Itemize
+Solicitação e acompanhamento de requerimentos feitos por alunos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Permitir o armazenamento de documentos pessoais.
+\end_layout
+
+\begin_layout Itemize
+Disponibilizar um quadro de aviso para que o usuário tenha acesso às informações
+ gerais da Universidade.
+\end_layout
+
+\begin_layout Section
+Objetivos Especificos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos-Especificos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Curso:
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Curso:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Acesso ao plano pedagógico do curso: Permitir que o aluno e/ou professor
+ tenha acesso ao plano que possui as informações da estrutura, disciplina,
+ corpo docente, normas, formas de acesso e sistema de avaliação.
+ 
+\end_layout
+
+\begin_layout Itemize
+Lista de disciplinas: Permitir o aluno acessar as informações das disciplinas
+ como por exemplo, conteúdo programático, sistema de avaliação, professor
+ responsável e pré-requisitos.
+ 
+\end_layout
+
+\begin_layout Itemize
+NDE (Núcleo Docente Estruturante): Tem como finalidade assessorar o colegiado
+ de curso em assuntos de natureza acadêmica como alterações de matriz curricular
+ e manter atualizada a matriz curricular do curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Requerimentos: Possibilita ao estudante solicitar/requerer a universidade
+ e/ou colegiado do seu curso documentos e informações para resolução de
+ possíveis problemas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Grade curricular: Possibilita ao estudante consultar as disciplinas referentes
+ a cada período de sua graduação, indica também os pré-requisitos que precisam
+ ser cumpridos de acordo com cada disciplina do seu curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Colegiado: É responsável pela estruturação administrativa, fiscalização
+ das normas do curso e por atender as demandas solicitadas pelos alunos
+ do seu curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ementa:Tem o objetivo de deixar claro para os alunos um resumo de forma
+ concisa e objetiva das disciplinas e atividades a serem desenvolvidas no
+ curso.
+\end_layout
+
+\begin_layout Subsection
+Aluno:
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Aluno:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Acesso e cadastro de dados: Permitir que o aluno armazene e tenha acesso
+ a seus dados pessoais, que incluem dados básicos como matrícula, tempo
+ de curso, e-mail institucional, disponibilizar acesso à matriz do curso
+ de Engenharia de Exploração e Produção de Petróleo, acesso ao calendário
+ acadêmico, acesso a todos as disciplinas em vigência no atual período,
+ entre outros.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acesso a requerimentos: Permitir que o aluno possa abrir requerimentos e
+ acompanhar requerimentos que já tenham sido abertos, os requerimentos disponíve
+is serão: Aproveitamento de crédito de proficiência e interno, declaração
+ de conclusão, de crédito e de tempo de curso, colação de grau, desligamento
+ e diploma, além de equivalências de disciplinas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Consultas acadêmicas: Permitir que o aluno consulte a relação de documentos
+ pendentes, acesso ao resumo da sua situação geral de graduação e disponibilizar
+ acesso a todos os planos de estudos que foram feitos pelo aluno durante
+ seu período de graduação.
+ 
+\end_layout
+
+\begin_layout Itemize
+Relatórios acadêmicos: Acesso rápido a documentos como a declaração de matrícula
+ que pode conter o (CRE/CH) ou o plano de estudos, ao extrato acadêmico
+ e a um formulário nada consta.
+ Esses documentos não precisaram ser pré-aprovados estando disponíveis para
+ o aluno de imediato.
+ 
+\end_layout
+
+\begin_layout Itemize
+Matrícula em turmas: Área onde o aluno poderá montar seu plano de estudos
+ tendo acesso às turmas que estão disponíveis para matrícula de acordo com
+ o semestre e os pré-requisitos, permitir que o aluno possa excluir uma
+ turma a qualquer momento durante o semestre e apresentar sugestões de disciplin
+as que devem ser foco do aluno.
+\end_layout
+
+\begin_layout Subsection
+Professor:
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Professor:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Acesso e cadastro de dados para professores: Permitir que o professor tenha
+ acesso ao sistema acadêmico, por meio de um login composto por usuário
+ e senha.
+ A criação de cadastro dos dados pessoais, precisará que o docente da UENF,
+ informe seus dados pessoais, formação e nível de titulação.
+ Disponibilizar também ao professor o calendário acadêmico, contando com
+ a grade curricular do curso de Engenharia de Exploração e Produção de Petróleo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Consultar cadastro de dados dos alunos: Permitir que o professor possa consultar
+ os dados cadastrais de seus discentes, como por exemplo acesso ao número
+ de matrícula, disciplinas cursadas, inclusão e exclusão de disciplinas,
+ se o aluno tem alguma bolsa de extensão ou iniciação científica.
+ 
+\end_layout
+
+\begin_layout Itemize
+Definir sistema avaliação da turma: Permitir que o professor, possa definir
+ no sistema como será feita a avaliação da turma, sua divisão, em termos
+ de quantidade de provas, seminário, listas de exercícios e média.
+ 
+\end_layout
+
+\begin_layout Itemize
+Definir um controle de frequência para os alunos: Permitir que o professor
+ do curso de engenharia de exploração e produção de petróleo da UENF, tenha
+ acesso a lista de presença contendo o nome completo e o número de matrícula
+ de todos os alunos matriculados em sua turma, onde será ministrada a sua
+ disciplina.
+ Assim ele poderá fazer diariamente a chamada de seus alunos e ter o controle
+ de frequência.
+ 
+\end_layout
+
+\begin_layout Itemize
+Criar ementas: Permitir que o professor crie ementas, mediante o que será
+ apresentado dentro do curso de engenharia de exploração e produção de petróleo
+ ao longo do período, esse documento precisa conter dados, dizendo como
+ será a divisão do conteúdo ministrado nas aulas, com sugestões de livros
+ e referências bibliográficas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acesso aos requerimentos dos alunos: Permitir que o professor consulte o
+ requerimento, que o aluno enviou ao coordenador de curso, isso só será
+ necessário mediante ao que couber especificamente ao professor.
+\end_layout
+
+\end_body
+\end_document

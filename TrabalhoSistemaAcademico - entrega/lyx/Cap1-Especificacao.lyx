@@ -1,0 +1,1186 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement ph
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Especificação
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter 
+\backslash
+;- Especificação} 
+\backslash
+rhead{
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Requisitos de Software?
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Requisitos-de-Software?"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Nome do produto e componentes
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Nome-do-produto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="10cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Nome
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Academico
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Função
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Automatizar processos da Universidade
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nome de produto e componentes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Nome-de-produto"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Requisitos funcionais
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Requisitos-funcionais"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="10cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF - 01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O software deve seguir a Norma Qualidade de Software (ISO/IEC 9126: NBR
+ 13596) que inclui definições de funcionalidade, confiabilidade, usabilidade
+ e eficiência.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF - 02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Deve permitir o download e upload de documentos pelo usuário.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF - 03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Deve permitir que o usuário tenha acesso rápido a informações tanto pessoais
+ quanto relacionadas à sua graduação.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF - 04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permitir que professores tenham propriedade para alterar informações que
+ remetem às suas funções.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Requisitos funcionais
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Requisitos-funcionais"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Requisitos não funcionais
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Requisitos-não-funcionais"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="10cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF - 01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O software poderá ser acessado por um navegador de internet a partir de
+ qualquer plataforma seja Windows, GNU/Linux ou Mac.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF - 02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O software poderá ser integrado com outras plataformas como a sincronização
+ com Lattes;
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Requisitos não funcionais
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Requisitos-não-funcionais"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Especificação do Programa 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Especificação-do-Programa"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software a ser desenvolvido deverá ser utilizado para fins acadêmicos
+ e será livre, multiplataforma e orientado a objeto em C++.
+ O software deve apresentar uma interface amigável para que o usuário se
+ sinta confortável ao utilizá-lo.
+ O projeto do sistema acadêmico criado para a Universidade Estadual do Norte
+ Fluminense Darcy Ribeiro (UENF), tem como objetivo gerenciar e organizar
+ todas as informações relevantes sobre os alunos, professores e cursos,
+ bem como suas atividades acadêmicas.
+ Ele é projetado para ajudar a administrar os dados de docentes e discentes,
+ cadastro e criação de disciplinas, fornecer requerimentos gerais e apresentar
+ suporte para as atividades acadêmicas.
+ O software será composto por ferramentas que auxiliam a comunidade acadêmica.
+ Além disso, o sistema acadêmico poderá ser usado no gerenciamento das atividade
+s administrativas da universidade, isso inclui o controle de carga horária
+ dos professores, a organização do calendário acadêmico, a gestão de horários
+ de aulas e a avaliação dos alunos.
+ Por fim, o sistema é importante para a gestão e organização das atividades
+ acadêmicas de uma universidade.
+ Ele é fundamental para garantir a transparência e eficiência no gerenciamento
+ dos processos educacionais, tornando a experiência dos alunos e professores
+ mais eficiente e didática.
+\end_layout
+
+\begin_layout Section
+Caso de uso geral 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Caso-de-uso"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No diagrama de caso de uso geral do sistema acadêmico da Universidade Estadual
+ Norte Fluminense Darcy Ribeiro (UENF) mostra funcionalidade nas opções
+ de entrada do usuário.
+ É uma ferramenta essencial para a compreensão do funcionamento do sistema
+ acadêmico da universidade.
+ Com o objetivo de ter uma visão geral das possibilidades de interação dos
+ usuários com o sistema, permitindo uma melhor compreensão das atividades
+ disponíveis para cada perfil de usuário.
+ No geral, esse sistema utiliza todos os setores compreendidos dentro da
+ universidade esse projeto irá abordar o perfil aluno, professor e curso.
+ Será possível ter uma visão geral das possibilidades de interações dos
+ usuários com o sistema permitindo uma melhor compreensão das atividades
+ disponíveis para cada perfil de usuário.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem1.png
+	lyxscale 50
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso geral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-caso-geral"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Caso de uso específico
+\end_layout
+
+\begin_layout Standard
+Podemos observar na Figura
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-caso-especifico"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ as opções de interação do usuário com o bacharelado, CCT e o curso escolhido,
+ Engenharia de Exploração e Produção de Petróleo.
+ Neste diagrama de caso de uso mostra em específico quais as funções que
+ estarão disponíveis na aba do curso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem2.png
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico do curso.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-caso-especifico"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+PPC (Plano Pedagógico do Curso): 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Visualizar os documentos com as diretrizes e objetivos do curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Visualizar as estratégias de ensino.
+ 
+\end_layout
+
+\begin_layout Itemize
+Compreender as competências e habilidades do curso.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lista de Disciplinas 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Verificar a relação de matérias ministradas pelo curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Verificar a carga horária.
+ 
+\end_layout
+
+\begin_layout Itemize
+Visualizar os pré-requisitos de cada matéria.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NDE (Núcleo Docente Estruturante) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Entender e verificar a documentação sobre o curso e a relação de participantes
+ do núcleo.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requerimentos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acesso a parte de requerimento de documentos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Solicitar documentos para alunos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Solicitar documentos para professores.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Alunos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acesso aos dados da conta do usuário como aluno.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acesso a sua grade de matérias de cada semestre.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acesso ao extrato escolar.
+ 
+\end_layout
+
+\begin_layout Itemize
+Solicitação de disciplinas.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Professores: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acesso aos dados e informações pelo usuário professor.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acesso a tabela de disciplinas gerais dos cursos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acesso a área de informações sobre os alunos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Grade Curricular:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Visualização da grade curricular do curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Colegiado: 
+\end_layout
+
+\begin_layout Itemize
+Ter acesso a área de representação dos alunos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Informações dos representantes.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ementa: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Visualizar as ementas de cada disciplina.
+ 
+\end_layout
+
+\begin_layout Itemize
+Verificar os documentos e informações sobre a grade curricular do curso.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico professor.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-caso"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-caso"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, apresenta um diagrama de caso de uso específico para o professor, onde
+ sua função tem o objetivo de mostrar os docentes da Universidade Estadual
+ do Norte Fluminense Darcy Ribeiro, dentro de um sistema acadêmico, com
+ enfoque nas interações do usuário professor com o sistema e com o usuário
+ aluno.
+\end_layout
+
+\begin_layout Itemize
+Inserção de informações pessoais: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O usuário professor, deverá inserir suas informações pessoais e sua titulação
+ (mestre, doutor, Ph.D.) no sistema.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Visualizar informações dos alunos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O professor terá acesso a todas as informações do aluno, do curso em que
+ ele está matriculado e suas notas e o desempenho dos alunos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Abertura de turmas (coordenador do curso/secretário): 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O Coordenador pode verificar a disponibilidade do professor e as ofertas
+ de disciplinas optativas do professor.
+ Logo, o sistema irá mostrar os devidos horários, datas e disciplinas que
+ o usuário aluno consegue acessar, mediante seus cursos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lançamento de notas: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No sistema acadêmico, o professor terá acesso ao número de alunos inscritos
+ em sua disciplina.
+ 
+\end_layout
+
+\begin_layout Itemize
+Após a aplicação e correção das provas, o docente será capaz de lançar as
+ notas obtidas pelos alunos, onde será exibido na tela uma tabela com o
+ número de matrícula de cada aluno.
+ Logo, o professor irá inserir as notas seguindo a ordem de correção.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Criar disciplinas (ementas): 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Para cada disciplina ofertada, o professor deverá criar um documento com
+ uma breve apresentação da disciplina.
+ O professor irá especificar resumidamente todo o conteúdo a ser ministrado
+ ao longo do período.
+ 
+\end_layout
+
+\begin_layout Itemize
+Lembrando que a ementa precisa ser concisa e objetiva, ao apresentar o conteúdo
+ de estudo para os alunos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Acesso a requerimentos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O professor terá acesso aos requerimentos dos alunos, sempre que o coordenador
+ lhe direcionar em casos específicos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Em situações em que o aluno que falte a uma avaliação e peça uma segunda
+ chamada, ou em situações em que há possibilidades de quebra de pré-requisito,
+ o professor será notificado sobre o deferimento ou indeferimento do coordenador.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Visualizar grade de horários: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No sistema, o usuário professor terá acesso para visualizar a grade com
+ todos os horários das disciplinas e dos cursos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Controle de frequência e notas: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+É necessário o professor ter o controle de frequência de cada aluno pois,
+ só será permitido 25% de faltas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Se o aluno superar essa quantidade, já estará reprovado.
+ Mesmo se tiver uma nota dentro ou acima da média.
+ 
+\end_layout
+
+\begin_layout Itemize
+permitir que o sistema faça de forma automática a aprovação e reprovação,
+ baseado nos inputs fornecidos pelo professor.
+ 
+\end_layout
+
+\begin_layout Itemize
+O Professor terá um prazo determinado pela secretaria do LENEP, para lançar
+ as notas e faltas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Por fim, o sistema acadêmico gera a ata de resultados.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+A figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-caso-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ exibe a interação do usuário com o sistema acadêmico, porém agora detalhando
+ a relação do usuário aluno com o sistema acadêmico, mostrando quais as
+ funcionalidades estarão disponíveis para que o usuário possa acessar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico do aluno.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-caso-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Matrícula do aluno na Universidade: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Entrega de documentos pelos alunos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Checar informações e requisitos para acesso ao curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Realizar consulta de documentos que comprovem sua matrícula ativa no curso.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consultar disciplina: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acessar grade curricular do curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Recomendações de disciplinas para cursar no semestre com base no histórico
+ em tempo real.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Acesso ao plano de estudo: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Oferecer funcionalidades como inclusão e exclusão de disciplinas, além de
+ salas e turmas cadastradas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Acessar o calendário acadêmico.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requerimentos gerais: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aproveitamento de crédito, proficiência e interno.
+ 
+\end_layout
+
+\begin_layout Itemize
+Declaração de conclusão, de crédito e de tempo de curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Colação de grau, desligamento e diploma.
+ o Equivalência e isenção de disciplina e quebra de pré-requisito.
+ 
+\end_layout
+
+\begin_layout Itemize
+Mobilidade estudantil, transferência interna e externa e aluno especial.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consulta de informações: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acessar o extrato escolar para consulta de notas e disciplinas cursadas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Visualizar documentos da universidade (regimento UENF, Prograd, Proex, normas).
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

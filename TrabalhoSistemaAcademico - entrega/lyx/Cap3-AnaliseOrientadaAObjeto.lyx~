@@ -1,0 +1,613 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+AOO
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+AOO
+\end_layout
+
+\end_inset
+
+ – Análise Orientada a Objeto
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Análise orientada a obje
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:AOO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter 
+\backslash
+;- AOO} 
+\backslash
+rhead{
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Próxima etapa do desenvolvimento do software do sistema acadêmico é a
+ análise orientada a objeto, nesta etapa teremos a identificação dos objetos
+ que farão parte do software, analisando suas relações e identificando classes,
+ atributos, métodos, heranças, associações, agregações, composições e dependênci
+as.
+\end_layout
+
+\begin_layout Section
+Diagramas de classes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de classes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dicionário de classes
+\end_layout
+
+\begin_layout Itemize
+Classe CPessoa: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Esta classe caracteriza uma pessoa, no caso em específico um indivíduo que
+ faz parte da universidade.
+ Essa pessoa possui: Nome, CPF, filiação, idade, sexo e etnia.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CAluno: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Esta classe caracteriza um aluno da universidade que possui: Curso, período,
+ matrícula, CR, email institucional, nota do ENEM e extrato acadêmico.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CProfessor: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Esta classe caracteriza o professor da universidade que possui: Matrícula,
+ titulação, turmas e alunos orientados.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CCurso: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Esta classe caracteriza os cursos da universidade que possui: Coordenador,
+ NDE, alunos, requerimentos, aluno representante, professor e PPC.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CEmentaDisciplina: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Esta classe caracteriza as ementas das disciplinas dos cursos da universidade
+ que possui: Código, nome, requisitos, ementas e versão.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de sequência"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\emph on
+O diagrama de sequência tem a função de mapear eventos específicos realizados
+ pelo software em uma ordem de tempo, para que o evento seja melhor entendido.
+ Estes diagramas apresentam um fluxo de ações e relacionam o usuário a objetos
+ do sistema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem7.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-sequência"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de máquina de estado
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de estados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Informa o estado de uma classe específica escolha a mais importante, funciona
+ como um fluxograma explicando como a classe se comporta com o decorrer
+ de eventos.
+\end_layout
+
+\begin_layout Section
+Diagrama de atividades
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem9.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividades
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-atividades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Atividades especificas
+\end_layout
+
+\begin_layout Subsubsection*
+Curso
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem10.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividade do curso
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-atividade"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Aluno
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem11.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividade do aluno
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-atividade-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Professor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem12.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividade do professor
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-atividade-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

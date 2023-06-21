@@ -1,0 +1,601 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter 
+\backslash
+;- Elaboração} 
+\backslash
+rhead{
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No processo de elaboração, é realizado um estudo de abrangência do software
+ em desenvolvimento, ajustando os requisitos iniciais do sistema que foram
+ definidos na etapa de especificação.
+ Tem-se como objetivo possibilitar o desenvolvimento de um sistema útil,
+ que atenda às necessidades do usuário e permita futuras extensões do programa.
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Análise de domínio
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Análise-de-domínio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Essa etapa é a fase de elaboração de um projeto, é importante realizar a
+ análise de domínio, que tem como objetivo compreender o escopo do sistema
+ a ser desenvolvido.
+ Essa parte engloba diversas atividades, como avaliar a possibilidade de
+ reutilização de componentes de software por meio da criação de bibliotecas
+ genéricas.
+ Assim, o analista de sistemas consegue ter uma abordagem mais abrangente,
+ buscando identificar conceitos fundamentais que possam ser aplicados em
+ outros projetos.
+ No caso do nosso software, será desenvolvido um novo sistema acadêmico
+ online que será criado para gerenciar um banco de dados da Universidade
+ Estadual do Norte Fluminense Darcy Ribeiro (UENF), contendo informações
+ das áreas que compõem a universidade.
+\end_layout
+
+\begin_layout Subsection
+Descrição do curso
+\end_layout
+
+\begin_layout Standard
+O curso de Exploração e Produção de Petróleo da UENF tem uma duração de
+ 5 (cinco) anos, onde o aluno inicia seus estudos na cidade de Campos dos
+ Goytacazes- RJ para poder estudar as disciplinas do ciclo básico, como:
+ Cálculo, Química, Física entre outras.
+ Após a aprovação em todas as disciplinas o aluno então se muda para Macaé
+ - RJ para dar início ao estudo das disciplinas do ciclo profissionalizante,
+ entre elas: Geologia, Reservatório, Exploração entre outras.
+ O curso engloba vários outros setores que são responsáveis por diferentes
+ áreas que juntos fornecem as informações necessárias para que o curso possa
+ existir, essas:
+\end_layout
+
+\begin_layout Itemize
+PPC (Plano Pedagógico do Curso): 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O Plano Pedagógico do Curso (PPC) é um documento que descreve as diretrizes
+ e objetivos do curso, suas estratégias de ensino, as competências e habilidades
+ que os alunos devem desenvolver durante a graduação, bem como a estrutura
+ curricular.
+ No caso do curso de Engenharia de Exploração e Produção de Petróleo, o
+ PPC deve apresentar as características específicas do curso, tais como
+ a ênfase em tópicos como a prospecção e exploração de petróleo, o uso de
+ tecnologias avançadas de produção e os impactos ambientais e sociais da
+ indústria do petróleo.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lista de disciplinas: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A lista de disciplinas é uma relação das matérias que serão ministradas
+ durante o curso, bem como suas cargas horárias, objetivos, ementas e pré-requis
+itos.
+ No caso do curso de Engenharia de Exploração e Produção de Petróleo, a
+ lista de disciplinas deve abranger tópicos como geologia do petróleo, perfuraçã
+o e completação de poços, produção de petróleo e gás, além de disciplinas
+ complementares em matemática, física, química e outras áreas.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NDE (Núcleo Docente Estruturante): 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O Núcleo Docente Estruturante (NDE) é responsável por garantir a coerência
+ e a qualidade do curso, bem como acompanhar e avaliar sua implementação
+ e avaliação.
+ No caso do curso de Engenharia de Exploração e Produção de Petróleo, o
+ NDE deve ser 11 composto pelo coordenador do curso e por professores de
+ cada um dos diferentes setores que compõe o curso.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requerimentos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os requerimentos são os procedimentos pelos quais os alunos solicitam a
+ inclusão ou exclusão de disciplinas, transferências, trancamentos, aproveitamen
+to de créditos, entre outros.
+ O processo de requerimentos deve ser claramente definido no PPC do curso,
+ bem como no regulamento geral da universidade.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Alunos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os alunos são o foco principal do curso e devem ser selecionados com base
+ em critérios específicos, como desempenho acadêmico, conhecimentos prévios
+ em matemática e ciências, e motivação para estudar engenharia de petróleo.
+ O curso deve fornecer suporte e orientação aos alunos durante toda a sua
+ trajetória acadêmica, incluindo a oferta de tutorias, aconselhamento profission
+al e suporte para estágios e oportunidades de pesquisa.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Professores:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os professores do curso de Engenharia de Exploração e Produção de Petróleo
+ devem ser altamente qualificados e experientes, com formação em áreas relevante
+s como geologia, engenharia de petróleo, física e química.
+ Além disso, eles devem ter experiência profissional na indústria de petróleo
+ e gás, bem como uma forte habilidade de ensino.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Grade Curricular:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A grade curricular é a estrutura do curso, que define a sequência de disciplinas
+ e sua carga horária total, além de especificar os pré-requisitos para cada
+ disciplina.
+ /A grade curricular do curso de Engenharia de Exploração e Produção de
+ Petróleo deve refletir os objetivos e competências definidos no PPC, além
+ de garantir uma formação sólida e abrangente em engenharia de petróleo.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Colegiado: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O Colegiado é um órgão colegiado responsável por supervisionar e coordenar
+ o curso de Engenharia de Exploração e Produção de Petróleo.
+ Ele é formado por professores, representantes dos alunos e da coordenação
+ do curso, e tem como responsabilidade principal garantir a qualidade e
+ a atualização do curso, além de propor mudanças e melhorias.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ementa: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As ementas das disciplinas são descrições detalhadas dos conteúdos e objetivos
+ de cada matéria.
+ No caso do curso de Engenharia de Exploração e Produção de Petróleo, as
+ ementas devem estar em consonância com os objetivos e competências definidos
+ no PPC, bem como com as necessidades e desafios da indústria de petróleo
+ e gás.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Descrição das responsabilidades do professor
+\end_layout
+
+\begin_layout Standard
+O corpo docente da Universidade Estadual Norte Fluminense- Darcy Ribeiro,
+ será responsável por atribuições gerais, no âmbito acadêmico.
+ Sendo de exclusiva responsabilidade: orientação e ministração da disciplina
+ em que ambas sejam feitas de forma clara e objetiva.
+ 12 Em sala de aula, os docentes devem abordar assuntos de conhecimento
+ tecnológico, incentivando e instruindo os alunos a fazerem pesquisas, em
+ locais estratégicos, como livros que tenham assunto didático e referências
+ bibliográficas.
+ Acerca de colocar em prática, todo o conteúdo programático com qualidade
+ e eficiência, seguindo também as ementas, conforme sua elaboração.
+ Isto deve ser feito, por todos os docentes, sejam eles do ciclo básico
+ ou do ciclo específico, que compõem o curso de Engenharia de Exploração
+ e Produção de Petróleo.
+ A seguir, podemos ver às demais atribuições dos docentes:
+\end_layout
+
+\begin_layout Itemize
+Orientar e Desenvolver atividades 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O professor terá a missão de promover eventos de caráter científico, como
+ iniciação científica, extensão e apoio acadêmico, a fim de usar o seu conhecime
+nto para ajudar a desenvolver o lado profissional do aluno e aprimorar o
+ que foi ministrado e aprendido em meio acadêmico.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cumprir Prazos 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O professor tem a responsabilidade de entregar em tempo hábil, o diário
+ com suas disciplinas ministradas, controle de notas, frequência e desempenho
+ dos alunos, à secretaria acadêmica.
+ O professor, tem o dever em cumprir o plano pedagógico, com empenho, qualidade
+ e dedicação, seguindo o prazo do calendário acadêmico.
+ Participar das reuniões com o conselho de classe e colegiado.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gerenciar informações dos alunos 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O docente utilizará o sistema acadêmico, para monitorar e gerenciar o discente,
+ colaborando também, na orientação do discente, ajudando em esclarecimentos,
+ dúvidas e naquilo que for possível.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cumprir Metas 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O professor, será avaliado todo final do de período sobre seus rendimentos,
+ didática, número de artigos publicados, trabalhos de iniciação científica,
+ O esperado é que os professores da UENF, sejam destaque ao serem comparados,
+ com outros docentes, de outras universidades.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Descrição das responsabilidades do aluno
+\end_layout
+
+\begin_layout Standard
+O aluno inicia os estudos na Universidade Estadual do Norte Fluminense Darcy
+ Ribeiro, UENF, onde cursa por dois anos em Campos dos Goytacazes e posteriormen
+te mais três anos em Macaé.
+ A existência de um sistema acadêmico em uma universidade traz diversos
+ benefícios significativos para os alunos.
+ Ele é um software projetado para auxiliar e aprimorar a experiência acadêmica
+ dos estudantes, fornecendo um conjunto de recursos e funcionalidades essenciais.
+ Os alunos podem receber comunicados, avisos e notificações importantes
+ diretamente na plataforma, mantendo-se atualizados sobre eventos, prazos
+ e informações relevantes da universidade.
+ Uma das principais vantagens é a facilidade de acesso às informações acadêmicas.
+ Através do sistema, os alunos podem consultar suas notas, acompanhar sua
+ frequência, visualizar o 13 calendário acadêmico e verificar os horários
+ de aula.
+ Isso proporciona uma visão clara e organizada do seu desempenho acadêmico.
+ O software do sistema acadêmico se relaciona com o aluno por meio de:
+\end_layout
+
+\begin_layout Itemize
+Armazenamento de dados pessoais: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Todas as informações pessoais e geradas na universidade são armazenadas
+ no sistema acadêmico.
+ Um local seguro e íntegro para se localizar os dados básicos, complementares
+ e observações; 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Acesso à matriz do curso: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A matriz curricular é projetada com base nos objetivos do programa acadêmico,
+ por meio dela, o aluno tem uma visão geral do programa acadêmico, indicando
+ quais disciplinas devem ser concluídos ao longo dos semestres ou anos de
+ estudo; 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Acesso ao calendário do curso: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O calendário acadêmico serve para organizar, programar e comunicar as atividades
+ acadêmicas ao longo do ano letivo.
+ Ele auxilia na organização do tempo, no cumprimento de prazos, na sincronização
+ de atividades e na uniformidade do funcionamento da instituição de ensino;
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Acesso às informações das disciplinas: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Informações sobre o conteúdo programático, ementa, professores, carga horária
+ e demais informações referentes às disciplinas do curso podem ser acessadas
+ pelos alunos; 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Acesso aos requerimentos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os requerimentos são solicitações formais dos alunos para realizar determinadas
+ ações ou obter informações específicas, tais como trancamento de matrícula,
+ exclusão de disciplina, equivalência, entre outros; 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Criação do plano de estudos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O plano de estudo é inerente a cada aluno.
+ Por meio dele, o estudante monta sua grade semestral com as disciplinas
+ desejadas contanto que não tenha interferência de horários e certificando-se
+ que tal disciplina seja oferecida naquele semestre por um professor; 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consulta a documentos oficiais: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No sistema é possível consultar documentos oficiais como documentos pendentes
+ por parte do aluno, resumos e planos de estudo de semestres anteriores;
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Emissão de relatórios oficiais: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O software pode gerar documentos oficiais para o aluno, tais como a declaração
+ de matrícula, com ou sem plano, extrato escolar e formulários de nada consta.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Diagrama de Pacotes
+\end_layout
+
+\begin_layout Standard
+O diagrama de pacotes fornece informações das relações dos pacotes (Curso,
+ Professor e Aluno) e como eles se relacionam.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Figura 5: Diagrama de pacotes.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Figura-5:-Diagrama"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
