@@ -120,6 +120,68 @@
 
 \begin_layout Standard
 \align block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Foram passados todos os arquivos do lyx já previamente formatados através
+ do github do projeto;
+\end_layout
+
+\begin_layout Plain Layout
+Os arquivos associados ao manual do desenvolvedor estão dentro de doc/ManualDoDe
+senvolvedor;
+\end_layout
+
+\begin_layout Plain Layout
+Tarefa 1:
+\end_layout
+
+\begin_layout Plain Layout
+Tem de copiar o conteúdo destes arquivos que enviaram para dentro dos arquivos
+ modelo.
+\end_layout
+
+\begin_layout Plain Layout
+depois tem de eliminar este diretório que criaram "TrabalhoSistemaAcademico
+ - entrega"
+\end_layout
+
+\begin_layout Plain Layout
+Quando recebe um modelo basicamente preenche o conteúdo do modelo, sem mudar
+ o mesmo.
+ Isto permite focar no que tem de fazer.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+As imagens associadas aos diagramas UML estão dentro do diretório UML;
+\end_layout
+
+\begin_layout Plain Layout
+Tarefa: 
+\end_layout
+
+\begin_layout Plain Layout
+- precisa mover as imagens para o diretório UML;
+\end_layout
+
+\begin_layout Plain Layout
+- precisa dar nome as imagens, sem usar espaços ou acentos.
+\end_layout
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap0-Introducao-Escopo-Objetivos.lyx"
@@ -216,6 +278,31 @@ options "apalike"
 
 
 \begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Tarefas:
+\end_layout
+
+\begin_layout Plain Layout
+Colocar em um apêndice a divisão do trabalho.
+\end_layout
+
+\begin_layout Plain Layout
+Módulo X - João
+\end_layout
+
+\begin_layout Plain Layout
+Módulo Y - Pedro...
+\end_layout
+
 \end_inset
 
 

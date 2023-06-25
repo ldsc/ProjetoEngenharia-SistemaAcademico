@@ -83,11 +83,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -148,9 +149,15 @@ thepage}
 \end_layout
 
 \begin_layout Standard
-A Próxima etapa do desenvolvimento do software do sistema acadêmico é a
- análise orientada a objeto, nesta etapa teremos a identificação dos objetos
- que farão parte do software, analisando suas relações e identificando classes,
+A 
+\change_deleted 1635264300 1687700585
+P
+\change_inserted 1635264300 1687700585
+p
+\change_unchanged
+róxima etapa do desenvolvimento do software do sistema acadêmico é a análise
+ orientada a objeto, nesta etapa teremos a identificação dos objetos que
+ farão parte do software, analisando suas relações e identificando classes,
  atributos, métodos, heranças, associações, agregações, composições e dependênci
 as.
 \end_layout
@@ -169,7 +176,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem6.png
+	filename ../imagens/imagem6.png
 	scale 50
 
 \end_inset
@@ -293,7 +300,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem7.png
+	filename ../imagens/imagem7.png
 	scale 50
 
 \end_inset
@@ -358,6 +365,29 @@ name "subsec:diagrama de estados"
 \end_inset
 
 
+\change_inserted 1635264300 1687700711
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1687700712
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700727
+diagrama de máquina de estado tem de informar a qual classe esta se referindo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -370,7 +400,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem8.png
+	filename ../imagens/imagem8.png
 	scale 50
 
 \end_inset
@@ -407,6 +437,30 @@ Informa o estado de uma classe específica escolha a mais importante, funciona
 
 \begin_layout Section
 Diagrama de atividades
+\change_inserted 1635264300 1687700744
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1687700744
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700766
+diagrama de atividades tem de informar a qual função de qual classe esta
+ se referindo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -419,7 +473,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem9.png
+	filename ../imagens/imagem9.png
 	scale 50
 
 \end_inset
@@ -473,7 +527,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem10.png
+	filename ../imagens/imagem10.png
 	scale 50
 
 \end_inset
@@ -511,6 +565,30 @@ name "fig:Diagrama-de-atividade"
 
 \begin_layout Subsubsection*
 Aluno
+\change_inserted 1635264300 1687700839
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1687700841
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700872
+a barra de bifurcação é usada para indicar paralelismo; Não tem como acessar
+ o plano de estudo se ainda não se matriculou...
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -523,7 +601,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem11.png
+	filename ../imagens/imagem11.png
 	scale 50
 
 \end_inset
@@ -561,6 +639,25 @@ name "fig:Diagrama-de-atividade-1"
 
 \begin_layout Subsubsection*
 Professor
+\change_inserted 1635264300 1687700881
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1687700882
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -573,7 +670,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem12.png
+	filename ../imagens/imagem12.png
 	scale 50
 
 \end_inset

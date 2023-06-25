@@ -82,11 +82,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -120,10 +121,10 @@ thepage}
 \end_layout
 
 \begin_layout Section
-Requisitos de Software?
+Requisitos de Software
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Requisitos-de-Software?"
+name "sec:Requisitos-de-Software"
 
 \end_inset
 
@@ -235,6 +236,29 @@ Requisitos funcionais
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Requisitos-funcionais"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+a tabela de requisitos deve incluir cada uma das demandas constantes dos
+ objetivos específicos; a diferença é que lá tem descrição menos formal;
+ aqui deve ser mais formal e já tentando conectar com a realidade de um
+ sistema computacional.
+ Em resumo, tem de reescrever.
+\end_layout
+
+\begin_layout Plain Layout
+Também vale dividir por módulo: colegiado, nde, coordenaçoes, professor,
+ aluno.
+ A ideia era cada grupo focar no seu tema, isto reduziria o texto.
+\end_layout
 
 \end_inset
 
@@ -513,6 +537,17 @@ s administrativas da universidade, isso inclui o controle de carga horária
  Ele é fundamental para garantir a transparência e eficiência no gerenciamento
  dos processos educacionais, tornando a experiência dos alunos e professores
  mais eficiente e didática.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+sugiro deixar uma descrição geral e então dividir de acordo com os módulos
+ a serem desenvolvidos
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -552,10 +587,20 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem1.png
+	filename ../imagens/imagem1.png
 	lyxscale 50
 	scale 50
 	rotateOrigin center
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+usem sempre caminho relativo, aqui não abriu nenhuma imagem!
+\end_layout
 
 \end_inset
 
@@ -586,16 +631,18 @@ name "fig:Diagrama-de-caso-geral"
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Section
 Caso de uso específico
 \end_layout
 
 \begin_layout Standard
-Podemos observar na Figura
+Podemos observar na 
+\change_inserted 1635264300 1687694532
+figura
+\change_deleted 1635264300 1687694532
+Figura
+\change_unchanged
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-caso-especifico"
@@ -621,7 +668,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem2.png
+	filename ../imagens/imagem2.png
 	scale 50
 	rotateOrigin center
 
@@ -657,6 +704,20 @@ name "fig:Diagrama-de-caso-especifico"
 
 \begin_layout Itemize
 PPC (Plano Pedagógico do Curso): 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+sigam a mesma divisão feita nos objetivos específicos;
+\end_layout
+
+\begin_layout Plain Layout
+coloquem diagramas para cada um deles, atendendo o que esta no regimento;
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -826,7 +887,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem3.png
+	filename ../imagens/imagem3.png
 	scale 50
 
 \end_inset
@@ -863,7 +924,13 @@ name "fig:Diagrama-de-caso"
 \end_layout
 
 \begin_layout Standard
-A figura 
+A 
+\change_inserted 1635264300 1687694532
+figura
+\change_deleted 1635264300 1687694532
+Figura
+\change_unchanged
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-caso"
@@ -898,14 +965,32 @@ Visualizar informações dos alunos:
 
 \begin_deeper
 \begin_layout Itemize
-O professor terá acesso a todas as informações do aluno, do curso em que
- ele está matriculado e suas notas e o desempenho dos alunos.
+O professor terá acesso a todas as informações dos alunos do curso, suas
+ notas e o desempenho (extrato escolar).
  
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Abertura de turmas (coordenador do curso/secretário): 
+\change_inserted 1635264300 1687691811
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687691816
+separem
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
@@ -944,35 +1029,128 @@ Criar disciplinas (ementas):
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687691893
 Para cada disciplina ofertada, o professor deverá criar um documento com
  uma breve apresentação da disciplina.
  O professor irá especificar resumidamente todo o conteúdo a ser ministrado
  ao longo do período.
  
+\change_inserted 1635264300 1687691903
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687691914
+não misturar turma com disciplina/ementa
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1635264300 1687691893
+
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687691893
 Lembrando que a ementa precisa ser concisa e objetiva, ao apresentar o conteúdo
- de estudo para os alunos.
+ de estudo para os alunos
+\change_unchanged
+.
  
+\change_inserted 1635264300 1687691929
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687691942
+existe um padrão de emente para a universidade; tomem a mesma como base
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Acesso a requerimentos: 
+Acesso a requerimentos:
+\change_deleted 1635264300 1687694505
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-O professor terá acesso aos requerimentos dos alunos, sempre que o coordenador
- lhe direcionar em casos específicos.
+O professor terá acesso aos requerimentos dos alunos, sempre que o 
+\change_deleted 1635264300 1687694447
+coordenador lhe direcionar em casos específicos
+\change_inserted 1635264300 1687694465
+requerimento for relacionado as disciplinas em que é o coordenador (coordenador
+ de disciplina)
+\change_unchanged
+.
+\change_inserted 1635264300 1687691952
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687691991
+o direcionamento deve ser automático; se o assunto envolve turma ministrada
+ pelo professor deve receber imediatamente o pedido; isto agiliza processos
+ e procedimentos.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
  
 \end_layout
 
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687692036
 Em situações em que o aluno que falte a uma avaliação e peça uma segunda
  chamada, ou em situações em que há possibilidades de quebra de pré-requisito,
- o professor será notificado sobre o deferimento ou indeferimento do coordenador.
+ o professor será notificado sobre o deferimento ou indeferimento do coordenador
+\change_inserted 1635264300 1687692041
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687694429
+o requerimento deve ser encaminhado automaticamente ao coordenador da turma;
+ o mesmo realiza o deferimento ou indeferimento com justificativa; caso
+ seja indeferido o aluno poderá entrar com recurso;
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  
 \end_layout
 
@@ -1024,7 +1202,15 @@ Por fim, o sistema acadêmico gera a ata de resultados.
 
 \end_deeper
 \begin_layout Standard
-A figura 
+A 
+\change_deleted 1635264300 1687694532
+f
+\change_inserted 1635264300 1687694532
+figura
+\change_deleted 1635264300 1687694532
+igura
+\change_unchanged
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-caso-1"
@@ -1049,7 +1235,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem4.png
+	filename ../imagens/imagem4.png
 	scale 50
 
 \end_inset

@@ -81,11 +81,12 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -321,6 +322,35 @@ O sistema acadêmico permitirá que os usuários tenham acesso a informações
  Dessa forma, o projeto de gestão acadêmica será mais organizado e eficiente,
  possibilitando a todos os envolvidos uma experiência mais enriquecedora
  e produtiva.
+\change_inserted 1635264300 1687688693
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687688782
+em praticamente todos os textos colocam informações sem ordem de precedência;
+ neste parágrafo falam de notas, depois calendário acadêmico e conteúdo
+ programático; precisa reescrever, sempre colocando na ordem natural, do
+ que vem antes para o que vem depois, do macro para o micro, do estático
+ para o dinâmico.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687688806
+Isto tem de ser feito em várias partes do documento.
+ Já vai ajudar a clarear as ideias e os diagramas.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -366,6 +396,36 @@ name "sec:Objetivos"
 Apresentar de forma eficiente informações como: notas, frequência, calendário
  acadêmico, normas da graduação, horários de aula e acesso à ementa.
  
+\change_inserted 1635264300 1687688875
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687688889
+reorganizar a ordem de apresentação;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687688893
+macro->micro
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687688898
+estático->dinâmico
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -385,7 +445,19 @@ Integrar diferentes processos acadêmicos em uma única plataforma.
 \end_layout
 
 \begin_layout Itemize
-Solicitação e acompanhamento de requerimentos feitos por alunos.
+Solicita
+\change_deleted 1635264300 1687688598
+ção
+\change_inserted 1635264300 1687688598
+r
+\change_unchanged
+ e acompanha
+\change_deleted 1635264300 1687688602
+mento
+\change_inserted 1635264300 1687688602
+r
+\change_unchanged
+ de requerimentos feitos por alunos.
  
 \end_layout
 
@@ -410,6 +482,126 @@ name "sec:Objetivos-Especificos"
 \end_layout
 
 \begin_layout Subsection
+
+\change_inserted 1635264300 1687695522
+Informações gerais:
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1687695678
+vários exemplos foram incluidos no github projects e desconsideraram....
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\change_inserted 1635264300 1687695679
+\begin_inset Graphics
+	filename ../imagens/InformacoesGerais.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687696548
+Cursos:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\change_inserted 1635264300 1687696548
+\begin_inset Graphics
+	filename ../imagens/cursos-departamentos-nde-colegiado.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687696494
+Departamento:
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1687697159
+.
+\begin_inset Graphics
+	filename ../imagens/cursos-departamentos-nde-colegiado.png
+	scale 50
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687696536
+NDE:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687696536
+Sugiro pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687697163
+Responsável pelo PPC, grade, lista disciplinas.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687696611
+ver regimento
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\change_inserted 1635264300 1687697163
+\begin_inset Graphics
+	filename ../imagens/cursos-departamentos-nde-colegiado.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687695413
+Colegiado do 
+\change_unchanged
 Curso:
 \begin_inset CommandInset label
 LatexCommand label
@@ -418,6 +610,35 @@ name "subsec:Curso:"
 \end_inset
 
 
+\change_inserted 1635264300 1687697170
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687696632
+Sugiro apagar o que tem abaixo e pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\change_inserted 1635264300 1687697170
+\begin_inset Graphics
+	filename ../imagens/cursos-departamentos-nde-colegiado.png
+	scale 50
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -425,20 +646,128 @@ Acesso ao plano pedagógico do curso: Permitir que o aluno e/ou professor
  tenha acesso ao plano que possui as informações da estrutura, disciplina,
  corpo docente, normas, formas de acesso e sistema de avaliação.
  
+\change_inserted 1635264300 1687690236
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690240
+mover para aluno
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687688963
+a ementa da disciplina na informa o sistema de avaliação, isto é decisão
+ do professor a cada semestre; na ementa temos os tipos de avaliações que
+ serão utilizadas.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
 Lista de disciplinas: Permitir o aluno acessar as informações das disciplinas
- como por exemplo, conteúdo programático, sistema de avaliação, professor
- responsável e pré-requisitos.
+ como por exemplo, conteúdo programático, 
+\change_deleted 1635264300 1687688979
+sistema
+\change_inserted 1635264300 1687688980
+tipos
+\change_unchanged
+ de avaliação
+\change_deleted 1635264300 1687689011
+, professor responsável
+\change_inserted 1635264300 1687689012
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689034
+o professor responsável pode mudar, é definido para cada turma pelo coordenador
+ do curso
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ e pré-requisitos.
  
+\change_inserted 1635264300 1687690247
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690247
+mover para aluno
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
-NDE (Núcleo Docente Estruturante): Tem como finalidade assessorar o colegiado
- de curso em assuntos de natureza acadêmica como alterações de matriz curricular
- e manter atualizada a matriz curricular do curso.
+NDE (Núcleo Docente Estruturante)
+\change_inserted 1635264300 1687689226
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689226
+peguem a descrição da norma da uenf
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+: Tem como finalidade assessorar o colegiado de curso em assuntos de natureza
+ acadêmica como alterações de matriz curricular e manter atualizada a matriz
+ curricular do curso.
  
+\change_inserted 1635264300 1687690250
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690253
+mover para NDE
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -446,6 +775,22 @@ Requerimentos: Possibilita ao estudante solicitar/requerer a universidade
  e/ou colegiado do seu curso documentos e informações para resolução de
  possíveis problemas.
  
+\change_inserted 1635264300 1687690257
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690257
+mover para aluno
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -453,19 +798,148 @@ Grade curricular: Possibilita ao estudante consultar as disciplinas referentes
  a cada período de sua graduação, indica também os pré-requisitos que precisam
  ser cumpridos de acordo com cada disciplina do seu curso.
  
+\change_inserted 1635264300 1687690259
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690259
+mover para aluno
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
-Colegiado: É responsável pela estruturação administrativa, fiscalização
- das normas do curso e por atender as demandas solicitadas pelos alunos
- do seu curso.
+Colegiado
+\change_inserted 1635264300 1687689214
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690294
+peguem a descrição da norma da uenf e coloquem aqui na forma de itens a
+ serem atendidos pelo software
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+: É responsável pela estruturação administrativa, fiscalização das normas
+ do curso e por atender as demandas solicitadas pelos alunos do seu curso.
  
 \end_layout
 
 \begin_layout Itemize
-Ementa:Tem o objetivo de deixar claro para os alunos um resumo de forma
- concisa e objetiva das disciplinas e atividades a serem desenvolvidas no
- curso.
+Ementa:
+\change_inserted 1635264300 1687689105
+ 
+\change_unchanged
+Tem o objetivo de deixar claro para os alunos um resumo de forma concisa
+ e objetiva das disciplinas e atividades a serem desenvolvidas no curso.
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687690855
+Coordenador do curso:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690855
+Sugiro pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687695484
+Criar turmas.
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687690856
+Coordenador de estágio:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690856
+Sugiro pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687690102
+...a ser definido posteriormente...
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690171
+idealmente a descrição do software deve cobrir tudo o que irá realizar;
+ mesmo que não venha fazer tudo; isto evita que coloquem em outros locais
+ coisas relacionadas a estágio
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1635264300 1687690858
+Coordenador de extensão:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690858
+Sugiro pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687690097
+...a ser definido posteriormente...
 \end_layout
 
 \begin_layout Subsection
@@ -477,15 +951,62 @@ name "subsec:Aluno:"
 \end_inset
 
 
+\change_inserted 1635264300 1687697229
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690860
+Sugiro pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\change_inserted 1635264300 1687697229
+\begin_inset Graphics
+	filename ../imagens/Alunos.png
+	scale 50
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
 Acesso e cadastro de dados: Permitir que o aluno armazene e tenha acesso
  a seus dados pessoais, que incluem dados básicos como matrícula, tempo
- de curso, e-mail institucional, disponibilizar acesso à matriz do curso
- de Engenharia de Exploração e Produção de Petróleo, acesso ao calendário
- acadêmico, acesso a todos as disciplinas em vigência no atual período,
- entre outros.
+ de curso, e-mail institucional,
+\change_deleted 1635264300 1687689268
+ disponibilizar acesso à matriz do curso de Engenharia de Exploração e Produção
+ de Petróleo, acesso ao calendário acadêmico,
+\change_inserted 1635264300 1687689270
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689280
+estes itens já estão acima, não repetir!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ acesso a todos as disciplinas em vigência no atual período, entre outros.
  
 \end_layout
 
@@ -496,6 +1017,23 @@ is serão: Aproveitamento de crédito de proficiência e interno, declaração
  de conclusão, de crédito e de tempo de curso, colação de grau, desligamento
  e diploma, além de equivalências de disciplinas.
  
+\change_inserted 1635264300 1687689322
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689350
+peguem a descrição da norma da uenf para ver o que é possível; vejam a lista
+ que já tem no sistema acadêmico; vejam outros sistemas acadêmicos
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -512,15 +1050,37 @@ Relatórios acadêmicos: Acesso rápido a documentos como a declaração de matr
  e a um formulário nada consta.
  Esses documentos não precisaram ser pré-aprovados estando disponíveis para
  o aluno de imediato.
+
+\change_deleted 1635264300 1687689415
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
 Matrícula em turmas: Área onde o aluno poderá montar seu plano de estudos
  tendo acesso às turmas que estão disponíveis para matrícula de acordo com
- o semestre e os pré-requisitos, permitir que o aluno possa excluir uma
- turma a qualquer momento durante o semestre e apresentar sugestões de disciplin
-as que devem ser foco do aluno.
+ o semestre e os pré-requisitos, permitir que o aluno possa 
+\change_deleted 1635264300 1687689487
+excluir uma turma a qualquer momento durante o semestre e
+\change_inserted 1635264300 1687689489
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689499
+isto não existe em nenhuma universidade séria
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ apresentar sugestões de disciplinas que devem ser foco do aluno.
 \end_layout
 
 \begin_layout Subsection
@@ -531,6 +1091,35 @@ name "subsec:Professor:"
 
 \end_inset
 
+
+\change_inserted 1635264300 1687697241
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690864
+Sugiro pegar os itens da norma/regimento da uenf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\change_inserted 1635264300 1687697241
+\begin_inset Graphics
+	filename ../imagens/Professores.png
+	scale 50
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -548,16 +1137,77 @@ Acesso e cadastro de dados para professores: Permitir que o professor tenha
 \begin_layout Itemize
 Consultar cadastro de dados dos alunos: Permitir que o professor possa consultar
  os dados cadastrais de seus discentes, como por exemplo acesso ao número
- de matrícula, disciplinas cursadas, inclusão e exclusão de disciplinas,
- se o aluno tem alguma bolsa de extensão ou iniciação científica.
+ de matrícula, disciplinas cursadas
+\change_inserted 1635264300 1687689579
+(extrato escolar
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689596
+o que existe é o extrato escolar, viabilizar o acesso
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+)
+\change_unchanged
+, inclusão e exclusão de disciplinas, se o aluno tem alguma bolsa de extensão
+ ou iniciação científica
+\change_inserted 1635264300 1687689609
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689639
+esta informação deve entrar no extrato escolar; a lista de bolsas que teve
+ e período: início-fim;
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  
 \end_layout
 
 \begin_layout Itemize
-Definir sistema avaliação da turma: Permitir que o professor, possa definir
- no sistema como será feita a avaliação da turma, sua divisão, em termos
- de quantidade de provas, seminário, listas de exercícios e média.
+Definir sistema avaliação da turma: Permitir que o professor
+\change_deleted 1635264300 1687689651
+,
+\change_unchanged
+ possa definir no sistema como será feita a avaliação da turma, sua divisão,
+ em termos de quantidade de provas, seminário, listas de exercícios e média.
  
+\change_inserted 1635264300 1687690502
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687690591
+Uma turma tem um professor coordenador da turma e outros que ministram aulas
+ e ajudam na preparação das avaliações (vejam exemplo introdução à engenharia).
+ Então, toda turma tem um professor coordenador que é quem monta o sistema
+ de avaliação e dá as notas finais.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -584,6 +1234,27 @@ Criar ementas: Permitir que o professor crie ementas, mediante o que será
 Acesso aos requerimentos dos alunos: Permitir que o professor consulte o
  requerimento, que o aluno enviou ao coordenador de curso, isso só será
  necessário mediante ao que couber especificamente ao professor.
+\change_inserted 1635264300 1687689790
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687689877
+Quando o aluno faz o requerimento sobre abertura de turma, quebra de pré-requisi
+to, segunda-chamada, ..., tudo que envolva a disciplina o coordenador da disciplina
+ e professores da disciplina devem receber cópia do pedido para agilizar
+ a resposta.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_body

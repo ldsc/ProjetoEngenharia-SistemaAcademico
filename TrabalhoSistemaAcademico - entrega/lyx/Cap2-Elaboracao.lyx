@@ -82,11 +82,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -176,16 +177,46 @@ Essa etapa é a fase de elaboração de um projeto, é importante realizar a
  buscando identificar conceitos fundamentais que possam ser aplicados em
  outros projetos.
  No caso do nosso software, será desenvolvido um novo sistema acadêmico
- online que será criado para gerenciar um banco de dados da Universidade
- Estadual do Norte Fluminense Darcy Ribeiro (UENF), contendo informações
- das áreas que compõem a universidade.
+ 
+\change_deleted 1635264300 1687697704
+online
+\change_inserted 1635264300 1687697706
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687697750
+não faremos um sistema online...faremos algo mais simples em C++; a uenf poderá
+ posteriormente aproveitar a estrutura e adaptar o sistema existente ou
+ fazer um novo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ que será criado para gerenciar um banco de dados da Universidade Estadual
+ do Norte Fluminense Darcy Ribeiro (UENF), contendo informações das áreas
+ que compõem a universidade.
 \end_layout
 
 \begin_layout Subsection
+
+\change_deleted 1635264300 1687697907
 Descrição do curso
+\change_inserted 1635264300 1687697907
+Curso
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 1635264300 1687697871
 O curso de Exploração e Produção de Petróleo da UENF tem uma duração de
  5 (cinco) anos, onde o aluno inicia seus estudos na cidade de Campos dos
  Goytacazes- RJ para poder estudar as disciplinas do ciclo básico, como:
@@ -196,6 +227,12 @@ O curso de Exploração e Produção de Petróleo da UENF tem uma duração de
  O curso engloba vários outros setores que são responsáveis por diferentes
  áreas que juntos fornecem as informações necessárias para que o curso possa
  existir, essas:
+\change_inserted 1635264300 1687697921
+ U, curso engloba vários setores que são responsáveis por diferentes áreas
+ que juntas fornecem as informações necessárias para que o curso possa existir.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -208,14 +245,47 @@ O Plano Pedagógico do Curso (PPC) é um documento que descreve as diretrizes
  e objetivos do curso, suas estratégias de ensino, as competências e habilidades
  que os alunos devem desenvolver durante a graduação, bem como a estrutura
  curricular.
- No caso do curso de Engenharia de Exploração e Produção de Petróleo, o
- PPC deve apresentar as características específicas do curso, tais como
- a ênfase em tópicos como a prospecção e exploração de petróleo, o uso de
- tecnologias avançadas de produção e os impactos ambientais e sociais da
- indústria do petróleo.
+ 
+\change_inserted 1635264300 1687697855
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687697986
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698016
+o software é geral, podem citar engenharia de petróleo como exemplo, mas
+ não como ordenador de como deve funcionar o sistema
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+O curso de Exploração e Produção de Petróleo da UENF tem uma duração de
+ 5 (cinco) anos, onde o aluno inicia seus estudos na cidade de Campos dos
+ Goytacazes- RJ para poder estudar as disciplinas do ciclo básico, como:
+ Cálculo, Química, Física entre outras.
+ Após a aprovação em todas as disciplinas o aluno então se muda para Macaé
+ - RJ para dar início ao estudo das disciplinas do ciclo profissionalizante,
+ entre elas: Geologia, Reservatório, Exploração entre outras.
+ 
+\change_unchanged
+No caso do curso de Engenharia de Exploração e Produção de Petróleo, o PPC
+ deve apresentar as características específicas do curso, tais como a ênfase
+ em tópicos como a prospecção e exploração de petróleo, o uso de tecnologias
+ avançadas de produção e os impactos ambientais e sociais da indústria do
+ petróleo.
  
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Lista de disciplinas: 
@@ -224,15 +294,49 @@ Lista de disciplinas:
 \begin_deeper
 \begin_layout Itemize
 A lista de disciplinas é uma relação das matérias que serão ministradas
- durante o curso, bem como suas cargas horárias, objetivos, ementas e pré-requis
-itos.
- No caso do curso de Engenharia de Exploração e Produção de Petróleo, a
- lista de disciplinas deve abranger tópicos como geologia do petróleo, perfuraçã
-o e completação de poços, produção de petróleo e gás, além de disciplinas
+ durante o curso
+\change_deleted 1635264300 1687697939
+,
+\change_inserted 1635264300 1687697967
+.
+ Cada disciplina/ementas inclui
+\change_deleted 1635264300 1687697948
+ bem como 
+\change_inserted 1635264300 1687697963
+ 
+\change_unchanged
+sua
+\change_deleted 1635264300 1687697949
+s
+\change_unchanged
+ carga
+\change_deleted 1635264300 1687697951
+s
+\change_unchanged
+ horária
+\change_deleted 1635264300 1687697952
+s
+\change_unchanged
+, objetivos, 
+\change_deleted 1635264300 1687697961
+ementas 
+\change_unchanged
+e pré-requisitos.
+ 
+\change_inserted 1635264300 1687697972
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No caso do curso de Engenharia de Exploração e Produção de Petróleo, a lista
+ de disciplinas deve abranger tópicos como geologia do petróleo, perfuração
+ e completação de poços, produção de petróleo e gás, além de disciplinas
  complementares em matemática, física, química e outras áreas.
  
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 NDE (Núcleo Docente Estruturante): 
@@ -240,6 +344,23 @@ NDE (Núcleo Docente Estruturante):
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_inserted 1635264300 1687698027
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698039
+peguem estas descrições das normas; só copiar e colar!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 O Núcleo Docente Estruturante (NDE) é responsável por garantir a coerência
  e a qualidade do curso, bem como acompanhar e avaliar sua implementação
  e avaliação.
@@ -251,30 +372,165 @@ O Núcleo Docente Estruturante (NDE) é responsável por garantir a coerência
 
 \end_deeper
 \begin_layout Itemize
+
+\change_inserted 1635264300 1687698429
+Grade Curricular:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687698429
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698429
+Coloque como sub-item do NDE
+\end_layout
+
+\end_inset
+
+A grade curricular define a estrutura do curso,  a sequência de disciplinas
+ e sua carga horária total, além de especificar os pré-requisitos para cada
+ disciplina.
+ Inclui disciplinas obrigatórias, optativas, e atividades complementares.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687698429
+A grade curricular do curso de Engenharia de Exploração e Produção de Petróleo
+ deve refletir os objetivos e competências definidos no PPC, além de garantir
+ uma formação sólida e abrangente em engenharia de petróleo.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687698429
+Ementa: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687698429
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698429
+
+\end_layout
+
+\end_inset
+
+As ementas das disciplinas são descrições detalhadas dos conteúdos e objetivos
+ de cada matéria.
+ No caso do curso de Engenharia de Exploração e Produção de Petróleo, as
+ ementas devem estar em consonância com os objetivos e competências definidos
+ no PPC, bem como com as necessidades e desafios da indústria de petróleo
+ e gás.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 Requerimentos: 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Os requerimentos são os procedimentos pelos quais os alunos solicitam a
- inclusão ou exclusão de disciplinas, transferências, trancamentos, aproveitamen
-to de créditos, entre outros.
- O processo de requerimentos deve ser claramente definido no PPC do curso,
+
+\change_inserted 1635264300 1687698085
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698085
+peguem estas descrições das normas; só copiar e colar!
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+Os requerimentos são os 
+\change_deleted 1635264300 1687698051
+procedimentos
+\change_inserted 1635264300 1687698052
+processos
+\change_unchanged
+ pelos quais os alunos solicitam a inclusão ou exclusão de disciplinas,
+ transferências, trancamentos, aproveitamento de créditos, entre outros.
+ 
+\change_deleted 1635264300 1687698076
+O processo de requerimentos deve ser claramente definido no PPC do curso,
  bem como no regulamento geral da universidade.
  
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Alunos: 
+Alunos:
+\change_deleted 1635264300 1687699084
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_inserted 1635264300 1687698107
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698182
+isto que esta aqui é uma descrição geral; não deve estar esta parte de seleção
+ pois a seleção não é definida pelo sistema acadêmico da Universidade; o
+ MEC é o encarregado do "vestibular" e sistema de entrada.
+ Não é de nossa ossada.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1635264300 1687698192
 Os alunos são o foco principal do curso e devem ser selecionados com base
  em critérios específicos, como desempenho acadêmico, conhecimentos prévios
  em matemática e ciências, e motivação para estudar engenharia de petróleo.
- O curso deve fornecer suporte e orientação aos alunos durante toda a sua
+ 
+\change_inserted 1635264300 1687698201
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698219
+esta frase fala do curso e não do aluno...não deve estar aqui
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+O curso deve fornecer suporte e orientação aos alunos durante toda a sua
  trajetória acadêmica, incluindo a oferta de tutorias, aconselhamento profission
 al e suporte para estágios e oportunidades de pesquisa.
  
@@ -287,21 +543,31 @@ Professores:
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687698245
 Os professores do curso de Engenharia de Exploração e Produção de Petróleo
  devem ser altamente qualificados e experientes, com formação em áreas relevante
 s como geologia, engenharia de petróleo, física e química.
  Além disso, eles devem ter experiência profissional na indústria de petróleo
  e gás, bem como uma forte habilidade de ensino.
  
+\change_inserted 1635264300 1687698247
+.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687698424
 Grade Curricular:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687698424
 A grade curricular é a estrutura do curso, que define a sequência de disciplinas
  e sua carga horária total, além de especificar os pré-requisitos para cada
  disciplina.
@@ -318,21 +584,54 @@ Colegiado:
 
 \begin_deeper
 \begin_layout Itemize
-O Colegiado é um órgão colegiado responsável por supervisionar e coordenar
- o curso de Engenharia de Exploração e Produção de Petróleo.
+O Colegiado é um órgão 
+\change_deleted 1635264300 1687698340
+colegiado
+\change_unchanged
+ responsável por supervisionar 
+\change_deleted 1635264300 1687698348
+e coordenar
+\change_unchanged
+ o curso 
+\change_deleted 1635264300 1687698355
+de Engenharia de Exploração e Produção de Petróleo
+\change_unchanged
+.
  Ele é formado por professores, representantes dos alunos e da coordenação
  do curso, e tem como responsabilidade principal garantir a qualidade e
  a atualização do curso, além de propor mudanças e melhorias.
  
+\change_inserted 1635264300 1687698370
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687698378
+copiem os dados das normas da uenf
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687698397
 Ementa: 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687698397
 As ementas das disciplinas são descrições detalhadas dos conteúdos e objetivos
  de cada matéria.
  No caso do curso de Engenharia de Exploração e Produção de Petróleo, as
@@ -347,75 +646,302 @@ Descrição das responsabilidades do professor
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1635264300 1687699119
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699125
+peguem dar normas da uenf
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 O corpo docente da Universidade Estadual Norte Fluminense- Darcy Ribeiro,
  será responsável por atribuições gerais, no âmbito acadêmico.
- Sendo de exclusiva responsabilidade: orientação e ministração da disciplina
- em que ambas sejam feitas de forma clara e objetiva.
- 12 Em sala de aula, os docentes devem abordar assuntos de conhecimento
- tecnológico, incentivando e instruindo os alunos a fazerem pesquisas, em
- locais estratégicos, como livros que tenham assunto didático e referências
- bibliográficas.
+ Sendo de exclusiva responsabilidade: orientação
+\change_inserted 1635264300 1687699456
+ de alunos
+\change_unchanged
+ e ministração d
+\change_deleted 1635264300 1687699461
+a
+\change_inserted 1635264300 1687699461
+e
+\change_unchanged
+ 
+\change_deleted 1635264300 1687699464
+disciplina em que ambas sejam feitas de forma clara e objetiva
+\change_inserted 1635264300 1687699464
+turmas
+\change_unchanged
+.
+ 
+\change_deleted 1635264300 1687699468
+12 
+\change_unchanged
+Em sala de aula, os docentes devem abordar assuntos de conhecimento tecnológico,
+ incentivando e instruindo os alunos a fazerem pesquisas, em locais estratégicos
+, como livros que tenham assunto didático e referências bibliográficas.
  Acerca de colocar em prática, todo o conteúdo programático com qualidade
  e eficiência, seguindo também as ementas, conforme sua elaboração.
  Isto deve ser feito, por todos os docentes, sejam eles do ciclo básico
- ou do ciclo específico, que compõem o curso de Engenharia de Exploração
- e Produção de Petróleo.
+ ou do ciclo específico
+\change_deleted 1635264300 1687699499
+, que compõem o curso de Engenharia de Exploração e Produção de Petróleo
+\change_unchanged
+.
  A seguir, podemos ver às demais atribuições dos docentes:
 \end_layout
 
 \begin_layout Itemize
-Orientar e Desenvolver atividades 
+Orientar 
+\change_deleted 1635264300 1687699540
+e Desenvolver atividades 
+\change_inserted 1635264300 1687699544
+alunos de IC/MSC/DSC
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_inserted 1635264300 1687699145
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699168
+o sistema academico não vai incluir a organização de eventos...; falem apenas
+ das coisas do sistema
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1635264300 1687699197
 O professor terá a missão de promover eventos de caráter científico, como
  iniciação científica, extensão e apoio acadêmico, a fim de usar o seu conhecime
 nto para ajudar a desenvolver o lado profissional do aluno e aprimorar o
  que foi ministrado e aprendido em meio acadêmico.
  
+\change_inserted 1635264300 1687699352
+coloquem aqui itens que o sistema academico terá de ter para dar suporte
+ a orientações; apenas conceitos que estão no regimento e possam ser programados.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Cumprir Prazos 
+\change_inserted 1635264300 1687699286
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699325
+notem que é vago demais...e não esta associado a atividade; 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-O professor tem a responsabilidade de entregar em tempo hábil, o diário
- com suas disciplinas ministradas, controle de notas, frequência e desempenho
- dos alunos, à secretaria acadêmica.
- O professor, tem o dever em cumprir o plano pedagógico, com empenho, qualidade
- e dedicação, seguindo o prazo do calendário acadêmico.
+O professor tem a responsabilidade de entregar
+\change_inserted 1635264300 1687699358
+,
+\change_unchanged
+ em tempo hábil, o diário com suas 
+\change_deleted 1635264300 1687699368
+disciplinas 
+\change_inserted 1635264300 1687699370
+turmas 
+\change_unchanged
+ministradas, controle de notas, frequência e desempenho dos alunos
+\change_inserted 1635264300 1687699382
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699386
+a entrega é feita via sistema
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1635264300 1687699378
+, à secretaria acadêmica
+\change_unchanged
+.
+ O professor
+\change_deleted 1635264300 1687699400
+,
+\change_unchanged
+ tem o dever em cumprir o plano pedagógico, com empenho, qualidade e dedicação,
+ seguindo o prazo do calendário acadêmico.
  Participar das reuniões com o conselho de classe e colegiado.
  
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687699566
 Gerenciar informações dos alunos 
+\change_inserted 1635264300 1687699568
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699588
+professor não gerencia informações dos alunos!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1635264300 1687699566
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\change_deleted 1635264300 1687699566
 O docente utilizará o sistema acadêmico, para monitorar e gerenciar o discente,
  colaborando também, na orientação do discente, ajudando em esclarecimentos,
  dúvidas e naquilo que for possível.
+
+\change_unchanged
  
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Cumprir Metas 
+\change_inserted 1635264300 1687699618
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699821
+confuso/genérico!
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699839
+já viram no sistema algum botão cumprir metas?
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699888
+Notem, conceitos subjetivos, discussões, tem de gerar estruturas mentais
+ claras, ideias claras; 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700018
+estas irão gerar modelos; estas irão gerar documentos(normas/regras); que
+ irão descrever e/ougerar metodologias/responsabilidades/procedimentos;
+ que irão gerar tecnologias, como um sistema acadêmico.
+ No final das contas só podemos programar aquilo que gera informações passíveis
+ de serem anotadas (textos) e processadas (como calcular médias).
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-O professor, será avaliado todo final do de período sobre seus rendimentos,
- didática, número de artigos publicados, trabalhos de iniciação científica,
- O esperado é que os professores da UENF, sejam destaque ao serem comparados,
- com outros docentes, de outras universidades.
+O professor, será avaliado todo final 
+\change_deleted 1635264300 1687699613
+do
+\change_unchanged
+ de período sobre seus rendimentos, didática
+\change_inserted 1635264300 1687699631
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699639
+para isso tem o sistema de avaliacão de disciplinas
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, número de artigos publicados
+\change_inserted 1635264300 1687699644
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687699804
+a avaliacão da produtividade científica é feita pelo sistema da CAPES, não
+ entra no sistema academico da universidade; o que existe na universidade
+ é um sistema de enquadramento e progressão; O sistema acadêmico gera um
+ documento que lista as turmas ministradas e cargas associadas; este doc
+ é utilizado quando o professor solicita o enquadramento.
+ Com a inclusão no sistema acadêmico de um módulo de suporte a orientação
+ pode-se adicionar informações de produtividade científica.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, trabalhos de iniciação científica, O esperado é que os professores da
+ UENF, sejam destaque ao serem comparados, com outros docentes, de outras
+ universidades.
 \end_layout
 
 \end_deeper
@@ -424,6 +950,23 @@ Descrição das responsabilidades do aluno
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1635264300 1687700097
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700112
+não é para descrever um caso específico; falem em linhas gerais
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 O aluno inicia os estudos na Universidade Estadual do Norte Fluminense Darcy
  Ribeiro, UENF, onde cursa por dois anos em Campos dos Goytacazes e posteriormen
 te mais três anos em Macaé.
@@ -436,8 +979,25 @@ te mais três anos em Macaé.
  e informações relevantes da universidade.
  Uma das principais vantagens é a facilidade de acesso às informações acadêmicas.
  Através do sistema, os alunos podem consultar suas notas, acompanhar sua
- frequência, visualizar o 13 calendário acadêmico e verificar os horários
- de aula.
+ frequência, visualizar o 13
+\change_inserted 1635264300 1687700162
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700162
+???
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ calendário acadêmico e verificar os horários de aula.
  Isso proporciona uma visão clara e organizada do seu desempenho acadêmico.
  O software do sistema acadêmico se relaciona com o aluno por meio de:
 \end_layout
@@ -495,6 +1055,52 @@ Informações sobre o conteúdo programático, ementa, professores, carga horár
 
 \end_deeper
 \begin_layout Itemize
+
+\change_inserted 1635264300 1687700220
+Acesso às informações das turmas: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687700234
+nome professor coordenador
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687700240
+nome professores da disciplina
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687700246
+...dias e horários das aulas
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687700259
+pasta com material das aulas
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1687700280
+atualmente estamos usando o google classroom; mas não é integrado
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 Acesso aos requerimentos: 
 \end_layout
 
@@ -516,6 +1122,17 @@ O plano de estudo é inerente a cada aluno.
  Por meio dele, o estudante monta sua grade semestral com as disciplinas
  desejadas contanto que não tenha interferência de horários e certificando-se
  que tal disciplina seja oferecida naquele semestre por um professor; 
+\change_inserted 1635264300 1687700325
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 1635264300 1687700346
+O aluno que entrar no RODA deve ter sua plano definido em conjunto com o
+ professor orientador no RODA.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
@@ -561,7 +1178,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/thaua/OneDrive/Área de Trabalho/Trabanho C++/9-Modelo-TrabalhoProgramacaoPratica/9-Modelo-TrabalhoProgramacaoPratica/imagens/imagem5.png
+	filename ../imagens/imagem5.png
 	scale 50
 
 \end_inset
