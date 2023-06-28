@@ -88,7 +88,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
+\author 275566104 "thaua"
 \end_header
 
 \begin_body
@@ -149,15 +149,9 @@ thepage}
 \end_layout
 
 \begin_layout Standard
-A 
-\change_deleted 1635264300 1687700585
-P
-\change_inserted 1635264300 1687700585
-p
-\change_unchanged
-róxima etapa do desenvolvimento do software do sistema acadêmico é a análise
- orientada a objeto, nesta etapa teremos a identificação dos objetos que
- farão parte do software, analisando suas relações e identificando classes,
+A Próxima etapa do desenvolvimento do software do sistema acadêmico é a
+ análise orientada a objeto, nesta etapa teremos a identificação dos objetos
+ que farão parte do software, analisando suas relações e identificando classes,
  atributos, métodos, heranças, associações, agregações, composições e dependênci
 as.
 \end_layout
@@ -196,10 +190,6 @@ Diagrama de classes
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -210,7 +200,11 @@ Dicionário de classes
 \end_layout
 
 \begin_layout Itemize
-Classe CPessoa: 
+Classe CPessoa:
+\change_deleted 275566104 1687953084
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
@@ -218,48 +212,80 @@ Classe CPessoa:
 Esta classe caracteriza uma pessoa, no caso em específico um indivíduo que
  faz parte da universidade.
  Essa pessoa possui: Nome, CPF, filiação, idade, sexo e etnia.
+
+\change_deleted 275566104 1687953084
  
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Classe CAluno: 
+Classe CAluno:
+\change_deleted 275566104 1687953084
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Esta classe caracteriza um aluno da universidade que possui: Curso, período,
  matrícula, CR, email institucional, nota do ENEM e extrato acadêmico.
+
+\change_deleted 275566104 1687953084
  
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Classe CProfessor: 
+Classe CProfessor:
+\change_deleted 275566104 1687953084
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Esta classe caracteriza o professor da universidade que possui: Matrícula,
  titulação, turmas e alunos orientados.
+
+\change_deleted 275566104 1687953084
  
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Classe CCurso: 
+Classe CCurso:
+\change_deleted 275566104 1687953084
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Esta classe caracteriza os cursos da universidade que possui: Coordenador,
  NDE, alunos, requerimentos, aluno representante, professor e PPC.
+
+\change_deleted 275566104 1687953084
  
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Classe CEmentaDisciplina: 
+Classe CEmentaDisciplina:
+\change_deleted 275566104 1687953084
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_deeper
@@ -327,10 +353,6 @@ name "fig:Diagrama-de-sequência"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -365,28 +387,7 @@ name "subsec:diagrama de estados"
 \end_inset
 
 
-\change_inserted 1635264300 1687700711
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 1635264300 1687700712
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1635264300 1687700727
-diagrama de máquina de estado tem de informar a qual classe esta se referindo
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
+\change_inserted 275566104 1687953142
 
 \end_layout
 
@@ -420,10 +421,6 @@ Diagrama de máquina de estado
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -433,25 +430,47 @@ Diagrama de máquina de estado
 Informa o estado de uma classe específica escolha a mais importante, funciona
  como um fluxograma explicando como a classe se comporta com o decorrer
  de eventos.
-\end_layout
-
-\begin_layout Section
-Diagrama de atividades
-\change_inserted 1635264300 1687700744
+\change_inserted 275566104 1687953190
 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted 1635264300 1687700744
-\begin_inset Note Note
+\change_inserted 275566104 1687953205
+\begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 1635264300 1687700766
-diagrama de atividades tem de informar a qual função de qual classe esta
- se referindo
+\change_inserted 275566104 1687953218
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 275566104 1687953353
+\begin_inset Graphics
+	filename ../imagens/Diagrama_maquina_estado_professor_ensino.png
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 275566104 1687953218
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 275566104 1687953254
+Diagrama de máquina de estado da classe CProfessor refente ao ensino
 \change_unchanged
 
 \end_layout
@@ -461,6 +480,22 @@ diagrama de atividades tem de informar a qual função de qual classe esta
 
 \change_unchanged
 
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de atividades
 \end_layout
 
 \begin_layout Standard
@@ -497,10 +532,6 @@ name "fig:Diagrama-de-atividades"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -554,10 +585,6 @@ name "fig:Diagrama-de-atividade"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -565,30 +592,6 @@ name "fig:Diagrama-de-atividade"
 
 \begin_layout Subsubsection*
 Aluno
-\change_inserted 1635264300 1687700839
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 1635264300 1687700841
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1635264300 1687700872
-a barra de bifurcação é usada para indicar paralelismo; Não tem como acessar
- o plano de estudo se ainda não se matriculou...
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -628,10 +631,6 @@ name "fig:Diagrama-de-atividade-1"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -639,25 +638,6 @@ name "fig:Diagrama-de-atividade-1"
 
 \begin_layout Subsubsection*
 Professor
-\change_inserted 1635264300 1687700881
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 1635264300 1687700882
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -694,10 +674,6 @@ name "fig:Diagrama-de-atividade-2"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
